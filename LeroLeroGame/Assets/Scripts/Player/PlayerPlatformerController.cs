@@ -41,11 +41,10 @@ public class PlayerPlatformerController : PhysicsObject {
         animator.SetBool ("grounded", grounded);
         animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
 
-
         targetVelocity = move * maxSpeed;
-        Debug.Log(grounded);
 
         /*
+        Debug.Log(grounded);
          Debug.Log("XD");
         float Horizontal = Input.GetAxisRaw("Horizontal");
         float Vertical = Input.GetAxisRaw("Vertical");
