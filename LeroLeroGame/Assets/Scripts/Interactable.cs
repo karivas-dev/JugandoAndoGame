@@ -12,6 +12,7 @@ public class Interactable : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent interactAction;
     public GameObject Message;
+    public GameObject player;
     public TMP_Text textElement;
     public int number = 0;
     public string definitions;
@@ -34,11 +35,13 @@ public class Interactable : MonoBehaviour
                 interactAction.Invoke();
                 Message.SetActive(true);
                 isTriggered = true;
+                /*player.SetActive(false);*/
             }
             else if(Input.GetKeyDown(interactKey) && isTriggered) 
             {
                 Message.SetActive(false);
                 isTriggered = false;
+                /*player.SetActive(true);*/
             }
         }
     }
