@@ -18,9 +18,9 @@ public class TimelineManager : MonoBehaviour
 
     IEnumerator EnableScriptsAfterTimeline()
     {
-        yield return new WaitForSeconds((float)director.duration); // Espera hasta que termine la línea de tiempo
+        yield return new WaitForSeconds((float)director.duration); 
 
-        wordTimer.isActive = true; // Activa el WordTimer
-        countdown.isActive = true; // Activa el CountDown
+        wordTimer.isActive = true; 
+        countdown.isActive = true; 
     }
 }

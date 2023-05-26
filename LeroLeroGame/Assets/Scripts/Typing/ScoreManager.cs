@@ -11,7 +11,11 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI scoreText;
 
+    //Nemy Max Health
     public int score = 1500;
+    public int currentHealth = 1500;
+
+    [SerializeField] private NemyHealthBar _healthbar;
 
     private void Awake()
     {
@@ -21,24 +25,29 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {   
         score = 1500;
+        currentHealth = score;
+        scoreText.gameObject.SetActive(false);
+
+        _healthbar.UpdateHealthBar(score, currentHealth);
         UpdateScoreText();
     }
 
     public void AddScore()
     {
-        score -= 10;
+        currentHealth -= 10;
         UpdateScoreText();
 
-        if (score <= 0)
+        if (currentHealth <= 0)
         {   
-            score = 0;
+            currentHealth = 0;
             SceneManager.LoadScene("VictoryScreen");
         }
     }
 
     void UpdateScoreText()
     {
-        scoreText.text = "Boss HP: " + score.ToString();
+        _healthbar.UpdateHealthBar(score, currentHealth);
+        scoreText.text = "Boss HP: " + currentHealth.ToString();
     }
 
 }
