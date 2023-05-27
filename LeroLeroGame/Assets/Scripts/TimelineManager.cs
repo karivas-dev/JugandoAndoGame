@@ -13,7 +13,7 @@ public class TimelineManager : MonoBehaviour
         director = GetComponent<PlayableDirector>();
         director.Play();
 
-        StartCoroutine(EnableScriptsAfterTimeline());
+       StartCoroutine(EnableScriptsAfterTimeline());
     }
 
     IEnumerator EnableScriptsAfterTimeline()

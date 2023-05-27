@@ -24,7 +24,7 @@ public class EntryNemy : MonoBehaviour
     void Update()
     {
         dirX = Input.GetAxisRaw("Horizontal");
-        SetIdle();
+        /*SetIdle();*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 
@@ -33,12 +33,15 @@ public class EntryNemy : MonoBehaviour
         {
             player.GetComponent<PlayerPlatformerController>().enabled = false;       
             director.GetComponent<TimelineManager>().enabled = true;
+            anim.SetBool("idle", true); 
         }   
     }
 
-    private void SetIdle() 
+  /*  private void SetIdle() 
     {   
-        if (dirX >= -1.37) 
-            anim.SetBool("idle", true); 
-    }
+        if (dirX == -1.37) 
+
+        
+
+    }*/
 }
