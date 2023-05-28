@@ -31,7 +31,7 @@ public class EntryNemy : MonoBehaviour
             anim.SetBool("idle", true);
             healthBar.SetActive(true);
             screenBG.SetActive(true);
-            /*timer.SetActive(true);*/
+            timer.SetActive(true);
         }   
     }
 }
