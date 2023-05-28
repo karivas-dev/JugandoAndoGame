@@ -5,26 +5,20 @@ using UnityEngine;
 
 public class EntryNemy : MonoBehaviour
 {
-    public GameObject player;
-    public GameObject director;
     private PlayerPlatformerController scriptToDeactivate;
     private TimelineManager timelineManager;
-    public bool isInRange = false;
-    private float dirX;
+    public GameObject elementToDeactivate;
+    public GameObject healthBar;
+    public GameObject screenBG;
+    public GameObject director;
+    public GameObject player;
+    public GameObject timer;
     public Animator anim;
 
-    
     // Start is called before the first frame update
     void Start()
     {
         anim.SetBool("idle", false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        dirX = Input.GetAxisRaw("Horizontal");
-        /*SetIdle();*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 
@@ -33,15 +27,11 @@ public class EntryNemy : MonoBehaviour
         {
             player.GetComponent<PlayerPlatformerController>().enabled = false;       
             director.GetComponent<TimelineManager>().enabled = true;
-            anim.SetBool("idle", true); 
+            elementToDeactivate.SetActive(false);
+            anim.SetBool("idle", true);
+            healthBar.SetActive(true);
+            screenBG.SetActive(true);
+            /*timer.SetActive(true);*/
         }   
     }
-
-  /*  private void SetIdle() 
-    {   
-        if (dirX == -1.37) 
-
-        
-
-    }*/
 }
