@@ -42,8 +42,4 @@ public class DialogTextAssistant : MonoBehaviour
             }
         }
     }
-
-    public void Writter() {
-
-    }
 }

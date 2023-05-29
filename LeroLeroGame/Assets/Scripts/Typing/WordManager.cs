@@ -17,7 +17,6 @@ public class WordManager : MonoBehaviour
     public void AddWord()
     {
         Word brand = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord(), this);
-        Debug.Log(brand.word);
 
         brands.Add(brand);
     }

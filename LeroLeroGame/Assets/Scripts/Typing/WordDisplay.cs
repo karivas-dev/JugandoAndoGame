@@ -8,7 +8,7 @@ public class WordDisplay : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public float fallspeed = 20f;
-    public float despawnYPosition = -10f;
+    public float despawnYPosition = 300f;
 
     private Word word;
     private WordManager wordManager;

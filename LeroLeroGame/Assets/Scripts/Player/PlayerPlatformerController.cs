@@ -42,19 +42,5 @@ public class PlayerPlatformerController : PhysicsObject {
         animator.SetFloat ("velocityX", Mathf.Abs (velocity.x) / maxSpeed);
 
         targetVelocity = move * maxSpeed;
-
-        /*
-        Debug.Log(grounded);
-         Debug.Log("XD");
-        float Horizontal = Input.GetAxisRaw("Horizontal");
-        float Vertical = Input.GetAxisRaw("Vertical");
-
-        if (Horizontal != 0 || Vertical != 0 ) {
-            animator.SetFloat("Horizontal", Horizontal);
-            //animator.SetFloat("Vertical", Vertical);
-            animator.SetFloat("Speed", 1);
-        } else {
-            animator.SetFloat("Speed", 0);
-        }*/
     }
 }

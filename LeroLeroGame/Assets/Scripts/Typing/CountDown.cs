@@ -15,6 +15,7 @@ public class CountDown : MonoBehaviour
 
     private ScoreManager scoreManager;
     public bool isActive = false;
+    [SerializeField] private TimerManager timerManager;
     
     void Start()
     {
@@ -22,6 +23,8 @@ public class CountDown : MonoBehaviour
         UpdateCountText();
 
         scoreManager = ScoreManager.instance;
+
+        timerManager.UpdateClock(startingTime, currentTime);
     }
     
     void Update()
@@ -48,6 +51,7 @@ public class CountDown : MonoBehaviour
 
     void UpdateCountText()
     {
+        timerManager.UpdateClock(startingTime, currentTime);
         countText.text = "Time: " + currentTime.ToString("0");
     }
 

@@ -1,7 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Playables;
+using System.Collections;
+using UnityEngine;
+using Cinemachine;
 
 public class TimelineManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class TimelineManager : MonoBehaviour
         yield return new WaitForSeconds((float)director.duration); 
 
         wordTimer.isActive = true; 
-        countdown.isActive = true; 
+        countdown.isActive = true;
+
     }
 }

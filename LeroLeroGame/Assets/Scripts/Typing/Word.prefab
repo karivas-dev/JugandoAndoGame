@@ -69,14 +69,14 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 24b83d5485290a6448578813c3a840b1, type: 2}
+  m_sharedMaterial: {fileID: -5666465602055576411, guid: 24b83d5485290a6448578813c3a840b1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278976267
   m_fontColor: {r: 0.042452812, g: 1, b: 0.042452812, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 2.0966568, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &1314315583966974967
@@ -150,4 +150,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2919292119586059089}
   fallspeed: 20
-  despawnYPosition: 0
+  despawnYPosition: 325

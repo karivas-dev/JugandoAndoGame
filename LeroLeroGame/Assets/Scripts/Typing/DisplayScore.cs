@@ -9,7 +9,7 @@ public class DisplayScore : MonoBehaviour
 
     void Start()
     {
-        scoreText.text = "You Defeated the Boss ";
+        scoreText.text = "You Defeated the Boss";
     }
 
 }
