@@ -1,21 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class WordSpawner : MonoBehaviour
 {
     public GameObject wordPrefab;
-    public Transform wordCanvas;
+    public RectTransform boxBG;
+    public Canvas wordCanvas;
 
-     public WordDisplay SpawnWord()
-     {
-          Vector3 Position = new Vector3(Random.Range(500f, 1200f), 850f);
+    private Camera mainCamera;
 
-          GameObject wordObj =  Instantiate(wordPrefab, Position, Quaternion.identity, wordCanvas);
-          WordDisplay wordDisplay = wordObj.GetComponent<WordDisplay>();
+    private void Start()
+    {
+        mainCamera = Camera.main;
+    }
 
-          return wordDisplay;
-     }
-     
+    public WordDisplay SpawnWord()
+    {
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+
+        GameObject wordObj = Instantiate(wordPrefab, spawnPosition, Quaternion.identity, wordCanvas.transform);
+        WordDisplay wordDisplay = wordObj.GetComponent<WordDisplay>();
+
+        return wordDisplay;
+    }
+
+    private Vector3 GetRandomSpawnPosition()
+    {
+          // Get Image Size
+          Vector2 imageSize = boxBG.rect.size;
+          imageSize.x *= boxBG.lossyScale.x;
+          imageSize.y *= boxBG.lossyScale.y;
+
+          // Image Position
+          Vector3 imageCenter = boxBG.position;
+
+          float minX = imageCenter.x - imageSize.x * 0.5f + wordPrefab.GetComponent<RectTransform>().rect.width * 0.5f;
+          float maxX = imageCenter.x + imageSize.x * 0.5f - wordPrefab.GetComponent<RectTransform>().rect.width * 0.5f;
+
+          float spawnX = Random.Range(minX, maxX);
+          float spawnY = imageCenter.y + imageSize.y * 0.5f;
+
+          Vector3 spawnPosition = new Vector3(spawnX, spawnY, 0f);
+
+          return spawnPosition;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+

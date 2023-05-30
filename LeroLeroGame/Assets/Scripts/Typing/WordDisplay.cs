@@ -8,10 +8,16 @@ public class WordDisplay : MonoBehaviour
 {
     public TextMeshProUGUI text;
     public float fallspeed = 20f;
-    public float despawnYPosition = 300f;
-
     private Word word;
     private WordManager wordManager;
+    private BoxCollider2D boxCollider;
+    private float despawnYPositionScreenSpace;
+
+    private void Start()
+    {
+        FindBoxBG();
+        CalculateDespawnYPosition();
+    }
 
     public void SetWord(Word _word, WordManager _wordManager)
     {
@@ -19,10 +25,10 @@ public class WordDisplay : MonoBehaviour
         wordManager = _wordManager;
         text.text = word.word;
     }
-   
+
     public void RemoveLetter()
     {
-        text.text = text.text.Remove(0,1);
+        text.text = text.text.Remove(0, 1);
         text.color = Color.red;
     }
 
@@ -34,14 +40,56 @@ public class WordDisplay : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(0f, -fallspeed * Time.deltaTime, 0f);
-        //checks Y position of the word and destroys the game object if the word reaches -10f 
-        if(transform.position.y < despawnYPosition)
+        float despawnYPositionWorldSpace = Camera.main.ScreenToWorldPoint(new Vector3(0f, despawnYPositionScreenSpace, 0f)).y;
+
+        if (transform.position.y < despawnYPositionWorldSpace)
         {
             wordManager.RemoveWord(word);
             Destroy(gameObject);
         }
+        else
+        {
+            transform.Translate(0f, -fallspeed * Time.deltaTime, 0f);
+        }
     }
 
+    private void FindBoxBG()
+    {
+        GameObject boxBGObject = GameObject.FindGameObjectWithTag("BoxBG");
+        if (boxBGObject != null)
+        {
+            boxCollider = boxBGObject.GetComponent<BoxCollider2D>();
+        }
+    }
+
+    private void CalculateDespawnYPosition()
+    {
+        Vector3 despawnYPositionWorldSpace = boxCollider.bounds.min;
+        despawnYPositionScreenSpace = Camera.main.WorldToScreenPoint(despawnYPositionWorldSpace).y;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
