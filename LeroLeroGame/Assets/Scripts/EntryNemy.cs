@@ -7,7 +7,7 @@ using TMPro;
 
 public class EntryNemy : MonoBehaviour
 {
-    private PlayerPlatformerController scriptToDeactivate;
+    private Movement scriptToDeactivate;
     private TimelineManager timelineManager;
     public GameObject canvas;
     public GameObject director;
@@ -34,7 +34,7 @@ public class EntryNemy : MonoBehaviour
         {
             if(Input.GetKeyDown(interactKey) && isTriggered == false)
             {
-                //player.GetComponent<PlayerPlatformerController>().enabled = false;
+                player.GetComponent<Movement>().enabled = false;
                 letterHint.SetActive(false);
                 interactAction.Invoke();
                 canvas.SetActive(true);
@@ -70,7 +70,7 @@ public class EntryNemy : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))  
         {
-            player.GetComponent<PlayerPlatformerController>().enabled = false;       
+            player.GetComponent<Movement>().enabled = false;       
             director.GetComponent<TimelineManager>().enabled = true;
             elementToDeactivate.SetActive(false);
             animator.SetFloat("HorizontalAxis", 0;

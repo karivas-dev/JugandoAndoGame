@@ -357,6 +357,10 @@ PrefabInstance:
       propertyPath: dashSpeed
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 2056151458616837759, guid: 82020ebf64653064da4cb1a83f4982cc, type: 3}
+      propertyPath: jumpForce
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 2056151459175998800, guid: 82020ebf64653064da4cb1a83f4982cc, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.09
@@ -990,8 +994,8 @@ PolygonCollider2D:
       - {x: 14.405645, y: -12.94667}
       - {x: 43.70297, y: -12.9460335}
       - {x: 44.97477, y: -12.961981}
-      - {x: 44.913654, y: -10.109659}
-      - {x: 43.730076, y: -10.119902}
+      - {x: 44.925518, y: -9.713272}
+      - {x: 43.742508, y: -9.68957}
       - {x: 43.712276, y: -12.387596}
       - {x: 43.71343, y: -12.270635}
       - {x: 12.80501, y: -12.166759}
