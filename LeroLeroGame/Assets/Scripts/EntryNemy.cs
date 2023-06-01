@@ -25,7 +25,7 @@ public class EntryNemy : MonoBehaviour
 
     void Start()
     {
-        animator.SetBool("idle", false);
+        animator.SetFloat("HorizontalAxis", 0);
     }
 
     void Update()
@@ -34,7 +34,7 @@ public class EntryNemy : MonoBehaviour
         {
             if(Input.GetKeyDown(interactKey) && isTriggered == false)
             {
-                player.GetComponent<PlayerPlatformerController>().enabled = false;
+                //player.GetComponent<PlayerPlatformerController>().enabled = false;
                 letterHint.SetActive(false);
                 interactAction.Invoke();
                 canvas.SetActive(true);
@@ -46,7 +46,7 @@ public class EntryNemy : MonoBehaviour
                     spriteRenderer.flipX = !spriteRenderer.flipX;
         
                 canvas.SetActive(false);
-                animator.SetBool("idle", true);
+                animator.SetFloat("HorizontalAxis", 0);
                 director.GetComponent<TimelineManager>().enabled = true;
                 isTriggered = false;
             }
@@ -73,7 +73,7 @@ public class EntryNemy : MonoBehaviour
             player.GetComponent<PlayerPlatformerController>().enabled = false;       
             director.GetComponent<TimelineManager>().enabled = true;
             elementToDeactivate.SetActive(false);
-            animator.SetBool("idle", true);
+            animator.SetFloat("HorizontalAxis", 0;
             healthBar.SetActive(true);
             screenBG.SetActive(true);
             timer.SetActive(true);
