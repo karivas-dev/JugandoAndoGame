@@ -13,11 +13,33 @@ public class Movement : MonoBehaviour
 
     [Space]
     [Header("Stats")]
-    public float speed = 10;
+    public float speed = 7;
     public float jumpForce = 50;
     public float slideSpeed = 5;
     public float wallJumpLerp = 10;
     public float dashSpeed = 60;
+
+    [Space]
+    [Header("Sprint")]
+    [SerializeField] private float baseSpeed = 7;
+    [SerializeField] private float extraSpeed = 12;
+    [SerializeField] private float sprintTime = 1;
+    private float actualSprintTime;
+    private float nextSprintTime;
+    [SerializeField] private float timeBetweenSprint = 4;
+    private bool canRun = true;
+    private bool isRunning = false;
+
+    [Space]
+    [Header("Coyote Time")]
+    private float coyoteTime = 0.2f;
+    private float coyoteTimeCounter;
+
+    [Space]
+    [Header("Jump Buffer")]
+    private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+    private bool jumpBuffered = false;
 
     [Space]
     [Header("Booleans")]
@@ -41,15 +63,16 @@ public class Movement : MonoBehaviour
     public ParticleSystem wallJumpParticle;
     public ParticleSystem slideParticle;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         coll = GetComponent<Collision>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<AnimationScript>();
+        actualSprintTime = sprintTime;
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         float x = Input.GetAxis("Horizontal");
@@ -61,10 +84,45 @@ public class Movement : MonoBehaviour
         Walk(dir);
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
 
+        if (Input.GetMouseButton(1) && canRun)
+        {
+            speed = extraSpeed;
+            isRunning = true;
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            speed = baseSpeed;
+            isRunning = false;
+        }
+
+        if (Mathf.Abs(rb.velocity.x) >= 0.1f && isRunning)
+        {
+            if (actualSprintTime > 0)
+            {
+                actualSprintTime -= Time.deltaTime;
+            }
+            else
+            {
+                speed = baseSpeed;
+                isRunning = false;
+                canRun = false;
+                nextSprintTime = Time.time + timeBetweenSprint;
+            }
+        }
+
+        if (!isRunning && actualSprintTime <= sprintTime && Time.time >= nextSprintTime)
+        {
+            actualSprintTime += Time.deltaTime;
+            if (actualSprintTime >= sprintTime)
+            {
+                canRun = true;
+            }
+        }
+
         if (coll.onWall && Input.GetButton("Fire3") && canMove)
         {
-            if(side != coll.wallSide)
-                anim.Flip(side*-1);
+            if (side != coll.wallSide)
+                anim.Flip(side * -1);
             wallGrab = true;
             wallSlide = false;
         }
@@ -79,13 +137,18 @@ public class Movement : MonoBehaviour
         {
             wallJumped = false;
             GetComponent<BetterJumping>().enabled = true;
+            coyoteTimeCounter = coyoteTime; 
         }
-        
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime; 
+        }
+
         if (wallGrab && !isDashing)
         {
             rb.gravityScale = 0;
-            if(x > .2f || x < -.2f)
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            if (x > .2f || x < -.2f)
+                rb.velocity = new Vector2(rb.velocity.x, 0);
 
             float speedModifier = y > 0 ? .5f : 1;
 
@@ -96,7 +159,7 @@ public class Movement : MonoBehaviour
             rb.gravityScale = 3;
         }
 
-        if(coll.onWall && !coll.onGround)
+        if (coll.onWall && !coll.onGround)
         {
             if (x != 0 && !wallGrab)
             {
@@ -112,15 +175,22 @@ public class Movement : MonoBehaviour
         {
             anim.SetTrigger("jump");
 
-            if (coll.onGround)
+            if (coll.onGround || coyoteTimeCounter > 0) 
+            {
                 Jump(Vector2.up, false);
-            if (coll.onWall && !coll.onGround)
-                WallJump();
+                coyoteTimeCounter = 0; 
+            }
+            else
+            {
+                
+                jumpBuffered = true;
+                jumpBufferCounter = jumpBufferTime;
+            }
         }
 
         if (Input.GetButtonDown("Fire1") && !hasDashed)
         {
-            if(xRaw != 0 || yRaw != 0)
+            if (xRaw != 0 || yRaw != 0)
                 Dash(xRaw, yRaw);
         }
 
@@ -130,7 +200,7 @@ public class Movement : MonoBehaviour
             groundTouch = true;
         }
 
-        if(!coll.onGround && groundTouch)
+        if (!coll.onGround && groundTouch)
         {
             groundTouch = false;
         }
@@ -140,7 +210,7 @@ public class Movement : MonoBehaviour
         if (wallGrab || wallSlide || !canMove)
             return;
 
-        if(x > 0)
+        if (x > 0)
         {
             side = 1;
             anim.Flip(side);
@@ -151,7 +221,16 @@ public class Movement : MonoBehaviour
             anim.Flip(side);
         }
 
-
+        
+        if (jumpBuffered)
+        {
+            jumpBufferCounter -= Time.deltaTime;
+            if (jumpBufferCounter <= 0)
+            {
+                
+                jumpBuffered = false;
+            }
+        }
     }
 
     void GroundTouch()
@@ -229,14 +308,14 @@ public class Movement : MonoBehaviour
 
     private void WallSlide()
     {
-        if(coll.wallSide != side)
-         anim.Flip(side * -1);
+        if (coll.wallSide != side)
+            anim.Flip(side * -1);
 
         if (!canMove)
             return;
 
         bool pushingWall = false;
-        if((rb.velocity.x > 0 && coll.onRightWall) || (rb.velocity.x < 0 && coll.onLeftWall))
+        if ((rb.velocity.x > 0 && coll.onRightWall) || (rb.velocity.x < 0 && coll.onLeftWall))
         {
             pushingWall = true;
         }
@@ -307,3 +386,5 @@ public class Movement : MonoBehaviour
         return particleSide;
     }
 }
+
+
