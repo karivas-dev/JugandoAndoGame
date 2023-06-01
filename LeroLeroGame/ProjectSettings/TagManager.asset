@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Breakable
   - BoxBG
+  - Trap
   layers:
   - Default
   - TransparentFX

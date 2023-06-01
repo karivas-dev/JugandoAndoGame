@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
-public class MovingPlatform : MonoBehaviour {
+public class MovingTraps : MonoBehaviour {
 	[SerializeField] private GameObject[] punto;
 	private int indexpunto = 0;
 	[SerializeField] private float speed = 4f;
@@ -23,19 +23,4 @@ public class MovingPlatform : MonoBehaviour {
 
 	}
 
-	private void OnCollisionEnter2D(Collision2D collision)
-	{
-		
-			collision.transform.SetParent(transform);
-
-		
-	}
-
-	private void OnCollisionExit2D(Collision2D collision)
-	{
-
-		collision.transform.SetParent(null);
-
-
-	}
 }
