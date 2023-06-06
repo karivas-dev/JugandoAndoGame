@@ -13,16 +13,16 @@ public class Movement : MonoBehaviour
 
     [Space]
     [Header("Stats")]
-    public float speed = 7;
-    public float jumpForce = 50;
+    public float speed = 15;
+    public float jumpForce = 16;
     public float slideSpeed = 5;
     public float wallJumpLerp = 10;
-    public float dashSpeed = 60;
+    public float dashSpeed = 70;
 
     [Space]
     [Header("Sprint")]
-    [SerializeField] private float baseSpeed = 7;
-    [SerializeField] private float extraSpeed = 12;
+    [SerializeField] private float baseSpeed = 15;
+    [SerializeField] private float extraSpeed = 20;
     [SerializeField] private float sprintTime = 1;
     private float actualSprintTime;
     private float nextSprintTime;

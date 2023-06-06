@@ -1,41 +1,63 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
-using TMPro;
-public class MovingPlatform : MonoBehaviour {
-	[SerializeField] private GameObject[] punto;
-	private int indexpunto = 0;
-	[SerializeField] private float speed = 4f;
 
-	private void Update()
-	{
-		if (Vector2.Distance(punto[indexpunto].transform.position, transform.position) < 0.1f)
-		{
-			indexpunto++;
-			if(indexpunto >= punto.Length)
+public class MovingPlatform : MonoBehaviour
+{
+    [SerializeField] private GameObject[] punto;
+    [SerializeField] private float speed = 6f;
+
+    private int targetWaypointIndex = 0;
+    
+    private Transform playerTransform;
+
+	[SerializeField] private float additionalSpeed = 80f;
+
+    private void Update()
+    {
+        if (punto.Length == 0)
+            return;
+
+        Vector2 targetPosition = punto[targetWaypointIndex].transform.position;
+
+        transform.position = Vector2.MoveTowards(transform.position, targetPosition, Time.deltaTime * speed);
+
+        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        {
+            targetWaypointIndex++;
+            if (targetWaypointIndex >= punto.Length)
+            {
+                targetWaypointIndex = 0;
+            }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            playerTransform = collision.transform;
+            collision.transform.SetParent(this.transform);
+
+			Movement playerMovement = collision.gameObject.GetComponent<Movement>();
+			if(playerMovement != null)
 			{
-				indexpunto = 0;
+				playerMovement.speed += additionalSpeed;
 			}
-		}
-		transform.position = Vector2.MoveTowards(transform.position, punto[indexpunto].transform.position, Time.deltaTime * speed);
+        }
+    }
 
-	}
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.transform.SetParent(null);
 
-	private void OnCollisionEnter2D(Collision2D collision)
-	{
-		
-			collision.transform.SetParent(transform);
-
-		
-	}
-
-	private void OnCollisionExit2D(Collision2D collision)
-	{
-
-		collision.transform.SetParent(null);
-
-
-	}
+			Movement playerMovement = collision.gameObject.GetComponent<Movement>();
+			if(playerMovement != null)
+			{
+				playerMovement.speed -= additionalSpeed;
+			}
+        }
+    }
 }
