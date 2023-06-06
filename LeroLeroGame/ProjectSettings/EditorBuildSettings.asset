@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MapWorld.unity
     guid: 4761cd5dbe2a83449a4d0f6b770b9c25
+  - enabled: 1
+    path: Assets/Scenes/CopyRight.unity
+    guid: 9489b3349f2e02b4ca7edb906f6c29aa
+  - enabled: 1
+    path: Assets/Scenes/IndustrialProperty.unity
+    guid: ae835673b9f347b448cd32bce595da4c
+  - enabled: 1
+    path: Assets/Scenes/LoadingScene.unity
+    guid: eca9757b2bbe624429cd719af108a3ba
   m_configObjects: {}
