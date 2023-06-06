@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     [Space]
     [Header("Stats")]
     public float speed = 15;
-    public float jumpForce = 16;
+    public float jumpForce = 18;
     public float slideSpeed = 5;
     public float wallJumpLerp = 10;
     public float dashSpeed = 70;
@@ -144,6 +144,12 @@ public class Movement : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime; 
         }
 
+        if (coll.onWall && !wallJumped && !isDashing)
+        {
+            hasDashed = false;
+            wallJumped = false;
+        }
+
         if (wallGrab && !isDashing)
         {
             rb.gravityScale = 0;
@@ -236,6 +242,7 @@ public class Movement : MonoBehaviour
     void GroundTouch()
     {
         hasDashed = false;
+        wallJumped = false;
         isDashing = false;
 
         side = anim.sr.flipX ? -1 : 1;
@@ -386,5 +393,6 @@ public class Movement : MonoBehaviour
         return particleSide;
     }
 }
+
 
 
