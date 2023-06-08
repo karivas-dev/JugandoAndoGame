@@ -33,7 +33,8 @@ public class BuildingTrigger : MonoBehaviour
                         break;
 
                     case 2:
-                        break;
+						Loader.Load(Loader.Scene.IndustrialProperty);
+						break;
 
                     case 3:
                         break;
