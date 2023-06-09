@@ -8,6 +8,7 @@ TagManager:
   - BoxBG
   - Trap
   - MovingPlatform
+  - GM
   layers:
   - Default
   - TransparentFX
