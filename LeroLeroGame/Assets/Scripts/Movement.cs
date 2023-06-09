@@ -81,7 +81,10 @@ public class Movement : MonoBehaviour
         float yRaw = Input.GetAxisRaw("Vertical");
         Vector2 dir = new Vector2(x, y);
 
-        Walk(dir);
+        if (rb.bodyType != RigidbodyType2D.Static)
+        {
+            Walk(dir);
+        }
         anim.SetHorizontalMovement(x, y, rb.velocity.y);
 
         if (Input.GetMouseButton(1) && canRun)
@@ -341,7 +344,10 @@ public class Movement : MonoBehaviour
 
         if (!wallJumped)
         {
-            rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
+            if (rb.bodyType != RigidbodyType2D.Static)
+            {
+                rb.velocity = new Vector2(dir.x * speed, rb.velocity.y);
+            }
         }
         else
         {

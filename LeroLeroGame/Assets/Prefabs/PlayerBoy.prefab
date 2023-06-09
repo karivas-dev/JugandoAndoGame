@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 2056151458616837758}
   - component: {fileID: 2056151458616837759}
   - component: {fileID: 2056151458616837752}
+  - component: {fileID: 5952876901389063356}
   - component: {fileID: 2056151458616837753}
+  - component: {fileID: 3291031359303177611}
   m_Layer: 0
   m_Name: PlayerBoy
   m_TagString: Untagged
@@ -95,6 +97,10 @@ MonoBehaviour:
   slideSpeed: 1
   wallJumpLerp: 5
   dashSpeed: 40
+  baseSpeed: 15
+  extraSpeed: 20
+  sprintTime: 1
+  timeBetweenSprint: 4
   canMove: 1
   wallGrab: 0
   wallJumped: 0
@@ -119,6 +125,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 3
   lowJumpMultiplier: 8
+--- !u!114 &5952876901389063356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056151458616837754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31f0f6ca60fefec4f9441602f0261b03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2056151458616837753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +161,20 @@ MonoBehaviour:
   bottomOffset: {x: 0, y: -0.79}
   rightOffset: {x: 0.5, y: -0.33}
   leftOffset: {x: -0.5, y: -0.33}
+--- !u!114 &3291031359303177611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056151458616837754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eb16fc368cb005429b20d62ffd516a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 2056151459175998806}
+  rb: {fileID: 2056151458616837757}
 --- !u!1 &2056151459172715976
 GameObject:
   m_ObjectHideFlags: 0

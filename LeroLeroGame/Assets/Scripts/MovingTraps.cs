@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
+
 public class MovingTraps : MonoBehaviour {
 	[SerializeField] private GameObject[] punto;
 	private int indexpunto = 0;
