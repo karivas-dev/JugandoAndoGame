@@ -13,11 +13,13 @@ public class DialogTextAssistant : MonoBehaviour
     public string text;
     private int characterIndex = 0;
     private float timer;
+    public bool iP = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        textElement.text = text;
+        if(iP)
+            textElement.text = text;
     }
 
     // Update is called once per frame

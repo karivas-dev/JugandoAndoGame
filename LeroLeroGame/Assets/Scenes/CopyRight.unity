@@ -222,13 +222,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 120
+  textElement: {fileID: 0}
   dialogBox: {fileID: 1640099123}
+  player: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 7d874ae125f68f14b8b75c901a0653cd, type: 3}
   - {fileID: 21300000, guid: 315e8e7c1bffb1e448cb666d54ac60a3, type: 3}
   - {fileID: 21300000, guid: e00623c6cd06b0d41acbf7020618772c, type: 3}
   - {fileID: 21300000, guid: d7b4defba62d2b54ca5913509e040a6d, type: 3}
-  text: "S\xED sirve"
+  textDefinitions:
+  - s
+  - d
+  - NO
 --- !u!61 &3344354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -871,7 +876,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 120
+  textElement: {fileID: 0}
   dialogBox: {fileID: 1640099123}
+  player: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: ee954df4266c42a4eafd94fca8f88e0c, type: 3}
   - {fileID: 21300000, guid: 3c4f441f30f98d74e9abb2f423a12962, type: 3}
@@ -879,7 +886,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 66f89cb9bd32fa44db52232602882ddc, type: 3}
   - {fileID: 21300000, guid: 3658c2ce3fd6c4a438127fa9514663b8, type: 3}
   - {fileID: 21300000, guid: 08d9d23f084a5354db940044000839bc, type: 3}
-  text: "S\xED sirve"
+  textDefinitions:
+  - s
+  - d
+  - NO
 --- !u!61 &167968395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1005,13 +1015,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 120
+  textElement: {fileID: 0}
   dialogBox: {fileID: 1640099123}
+  player: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 93c93df3bfd9bb541964ccf1e272d115, type: 3}
   - {fileID: 21300000, guid: 2ea762562f453fa49a5ac2fe68a0b82d, type: 3}
   - {fileID: 21300000, guid: 897d97fda7c9bab469d615d8efce1cc1, type: 3}
   - {fileID: 21300000, guid: 33de3243f4893de43a4982b64cbefecf, type: 3}
-  text: "S\xED sirve"
+  textDefinitions:
+  - s
+  - d
+  - NO
 --- !u!61 &175551679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4111,7 +4126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834705891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170.82996, y: -25.499308, z: -14.999999}
+  m_LocalPosition: {x: 170.79796, y: -25.495892, z: -14.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4334,13 +4349,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 120
+  textElement: {fileID: 0}
   dialogBox: {fileID: 1640099123}
+  player: {fileID: 0}
   sprites:
   - {fileID: 21300000, guid: 93c93df3bfd9bb541964ccf1e272d115, type: 3}
   - {fileID: 21300000, guid: 2ea762562f453fa49a5ac2fe68a0b82d, type: 3}
   - {fileID: 21300000, guid: 897d97fda7c9bab469d615d8efce1cc1, type: 3}
   - {fileID: 21300000, guid: 33de3243f4893de43a4982b64cbefecf, type: 3}
-  text: "S\xED sirve"
+  textDefinitions:
+  - s
+  - d
+  - NO
 --- !u!61 &844860382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4439,6 +4459,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2056151458616837756, guid: 82020ebf64653064da4cb1a83f4982cc, type: 3}
   m_PrefabInstance: {fileID: 482023380}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &869283236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6509907057481655602, guid: d69502b574880e447b38b67e584884da, type: 3}
+  m_PrefabInstance: {fileID: 1065311173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &900459168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5322,11 +5353,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6509907056114349093, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6509907056114349093, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6509907056114349093, guid: d69502b574880e447b38b67e584884da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6509907056114349093, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -5334,7 +5369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6509907056114349093, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 124
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6509907057452002354, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_Pivot.x
@@ -5761,7 +5796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136305863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 170.83116, y: -22.49625, z: -14.999999}
+  m_LocalPosition: {x: 170.79916, y: -22.49625, z: -14.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9350,9 +9385,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 120
+  textElement: {fileID: 0}
   dialogBox: {fileID: 1640099123}
+  player: {fileID: 0}
   sprites: []
-  text: "S\xED sirve"
+  textDefinitions:
+  - s
+  - d
+  - NO
 --- !u!4 &1698200587
 Transform:
   m_ObjectHideFlags: 0
@@ -9863,13 +9903,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactKey: 120
+  textElement: {fileID: 869283236}
   dialogBox: {fileID: 685634608}
+  player: {fileID: 2065209119}
   sprites:
   - {fileID: 21300000, guid: 3233b78fc04a6c941987df6cb01a7216, type: 3}
   - {fileID: 21300000, guid: ba716adb044f0114881d23e46a29df79, type: 3}
   - {fileID: 21300000, guid: 3b701459a8570ec4b9ce86a0c955fbd5, type: 3}
   - {fileID: 21300000, guid: 90ca51d31d97c8b42a51935e1e7331f7, type: 3}
-  text: "S\xED sirve"
+  textDefinitions:
+  - s
+  - d
+  - NO
 --- !u!61 &1763500006
 BoxCollider2D:
   m_ObjectHideFlags: 0

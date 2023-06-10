@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using TMPro;
 
 public class Interactable : MonoBehaviour
 {
     public KeyCode interactKey;
+    public TMP_Text textElement;
     public GameObject dialogBox;
+    public GameObject player;
     public List<Sprite> sprites = new List<Sprite>();
     private bool isInRange = false;
     private int spriteIndex = 0;
-    public string text = "Sí sirve";
-    private bool hasInteracted = false;
+    public string[] textDefinitions = {"s",
+    "d",
+    "NO",
+    };
 
+    private bool hasInteracted = false;
+    private bool dialogIn= false;
+    private int textIndex = 0;
     private SpriteRenderer spriteRenderer;
 
     private void Awake()
@@ -30,10 +39,18 @@ public class Interactable : MonoBehaviour
             {
                 if (!hasInteracted)
                 {
-                    hasInteracted = true;
+                    hasInteracted = true;  
+                    textElement.text = textDefinitions[textIndex];
+                    textIndex++;   
+                    player.GetComponent<Movement>().enabled = false;            
                     dialogBox.SetActive(true);
+                    dialogIn = true;
                 }
-
+                else
+                {
+                    player.GetComponent<Movement>().enabled = true;            
+                    dialogBox.SetActive(false);
+                }
             }
         }
     }
@@ -54,7 +71,5 @@ public class Interactable : MonoBehaviour
     {
             spriteRenderer.sprite = sprites[spriteIndex];
             spriteIndex++;
-     
-
     }
 }
