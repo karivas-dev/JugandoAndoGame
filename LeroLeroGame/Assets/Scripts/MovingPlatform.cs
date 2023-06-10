@@ -11,7 +11,7 @@ public class MovingPlatform : MonoBehaviour
     
     private Transform playerTransform;
 
-	[SerializeField] private float additionalSpeed = 80f;
+	[SerializeField] private float additionalSpeed;
 
     private void Update()
     {

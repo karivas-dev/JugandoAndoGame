@@ -5,14 +5,13 @@ using UnityEngine.Events;
 
 public class Interactable : MonoBehaviour
 {
-    public UnityEvent interactAction;
     public KeyCode interactKey;
     public GameObject dialogBox;
-
     public List<Sprite> sprites = new List<Sprite>();
-
     private bool isInRange = false;
     private int spriteIndex = 0;
+    public string text = "Sí sirve";
+    private bool hasInteracted = false;
 
     private SpriteRenderer spriteRenderer;
 
@@ -26,12 +25,15 @@ public class Interactable : MonoBehaviour
         if (isInRange && Input.GetKeyDown(interactKey))
         {
             if (spriteIndex < sprites.Count)
-            {
                 ChangeSprite();
-            }
             else
             {
-                isInRange = false;
+                if (!hasInteracted)
+                {
+                    hasInteracted = true;
+                    dialogBox.SetActive(true);
+                }
+
             }
         }
     }
@@ -39,29 +41,20 @@ public class Interactable : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
             isInRange = true;
-        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
             isInRange = false;
-        }
     }
 
     private void ChangeSprite()
     {
-        spriteRenderer.sprite = sprites[spriteIndex];
-        spriteIndex++;
-        interactAction.Invoke();
-        dialogBox.SetActive(true);
+            spriteRenderer.sprite = sprites[spriteIndex];
+            spriteIndex++;
+     
+
     }
 }
-
-
-
-
-

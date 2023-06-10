@@ -6,55 +6,69 @@ using UnityEngine.Events;
 public class ElevatorTrigger : MonoBehaviour
 {
     public UnityEvent interactAction;
-	public bool isInRange = false;
-	public bool isTriggered = false;
-	public KeyCode interactKey;
-	public GameObject player;
-	public GameObject elevator;
+    public bool isInRange = false;
+    public bool isTriggered = false;
+    public KeyCode interactKey;
+    public GameObject player;
+    public GameObject elevator;
 
     public Transform target;
     public float speed;
 
-	// Start is called before the first frame update
-	void Start()
-	{
+    private bool isMoving = false;
 
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        if (isInRange && !isMoving)
+        {
+            if (Input.GetKeyDown(interactKey) && isTriggered == false)
+            {
+                isTriggered = true;
+                MoveElevator();
+            }
+            else if (Input.GetKeyDown(interactKey) && isTriggered)
+            {
+                isTriggered = false;
+                MoveElevator();
+            }
+        }
+    }
 
-	// Update is called once per frame
-	void Update()
-	{
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+            isInRange = true;
+    }
 
-		if (isInRange)
-		{
-            float step = speed * Time.deltaTime;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, step);
-            
-			if (Input.GetKeyDown(interactKey) && isTriggered == false)
-			{
-				interactAction.Invoke();
-				isTriggered = true;
-				
-			}
-			else if (Input.GetKeyDown(interactKey) && isTriggered)
-			{
-				isTriggered = false;
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+            isInRange = false;
+    }
 
-			}
-		}
-	}
+    void MoveElevator()
+    {
+        isMoving = true;
+        StartCoroutine(MoveToTarget());
+    }
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.gameObject.CompareTag("Player"))
-			isInRange = true;
+    IEnumerator MoveToTarget()
+    {
+        Vector3 startPosition = elevator.transform.position;
+        Vector3 targetPosition = target.position;
+        float elapsedTime = 0f;
 
+        while (elapsedTime < speed)
+        {
+            elevator.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / speed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
 
-	}
+        elevator.transform.position = targetPosition;
+        interactAction.Invoke();
 
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-		if (collision.gameObject.CompareTag("Player"))
-			isInRange = false;
-	}
+        isMoving = false;
+    }
 }
