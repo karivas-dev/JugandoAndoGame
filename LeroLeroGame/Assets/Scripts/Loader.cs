@@ -28,7 +28,7 @@ public static class Loader
 
     public static void LoaderCallback()
     {
-        /* Triggered adter the first Update which lets the screen refresh
+        /* Triggered after the first Update which lets the screen refresh
         Execute the loader callback action which will load the target scene */
 
         if(onLoaderCallback != null) 

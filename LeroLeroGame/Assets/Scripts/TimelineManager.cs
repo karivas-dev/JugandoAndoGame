@@ -9,20 +9,29 @@ public class TimelineManager : MonoBehaviour
     private PlayableDirector director;
     public WordTimer wordTimer;
     public CountDown countdown;
+    public string cutscene;
     
     void Start() {
         director = GetComponent<PlayableDirector>();
         director.Play();
 
-       StartCoroutine(EnableScriptsAfterTimeline());
+        StartCoroutine(EnableAfterTimeline());
+        
     }
 
-    IEnumerator EnableScriptsAfterTimeline()
+    IEnumerator EnableAfterTimeline()
     {
         yield return new WaitForSeconds((float)director.duration); 
+        switch(cutscene) 
+        {
+            case "EntryNemy":
+                wordTimer.isActive = true; 
+                countdown.isActive = true;
+                break;
 
-        wordTimer.isActive = true; 
-        countdown.isActive = true;
-
+            case "Robbery":
+                Loader.Load(Loader.Scene.IndustrialProperty);
+                break;
+        }
     }
 }
