@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
 	private int spriteIndex = 0;
 	public string[] textDefinitions = {"s",
 	"d",
-	"NO","jaj"
+	"NO","jaj", "r", 
 	};
 
 	private bool hasInteracted = false;
