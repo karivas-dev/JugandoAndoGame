@@ -226,7 +226,7 @@ MonoBehaviour:
   dialogBox: {fileID: 685634608}
   player: {fileID: 2065209119}
   sprites:
-  - {fileID: 21300000, guid: 7d874ae125f68f14b8b75c901a0653cd, type: 3}
+  - {fileID: 21300000, guid: 1f7931bd09049ea45a5cd75c66906182, type: 3}
   - {fileID: 21300000, guid: 315e8e7c1bffb1e448cb666d54ac60a3, type: 3}
   - {fileID: 21300000, guid: e00623c6cd06b0d41acbf7020618772c, type: 3}
   - {fileID: 21300000, guid: d7b4defba62d2b54ca5913509e040a6d, type: 3}
@@ -4254,7 +4254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834705891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 117.089645, y: -43.29625, z: -14.999999}
+  m_LocalPosition: {x: 117.09917, y: -40.7, z: -14.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4830,8 +4830,8 @@ PolygonCollider2D:
       - {x: 204.6546, y: -23.619934}
       - {x: 201.06668, y: -23.53598}
       - {x: 169.94434, y: -23.35933}
-      - {x: 169.90327, y: -21.200012}
-      - {x: 166.66475, y: -21.245121}
+      - {x: 169.86789, y: -20.350979}
+      - {x: 166.70013, y: -20.325344}
       - {x: 166.68436, y: -23.283726}
       - {x: 113.39656, y: -22.873707}
       - {x: 112.40604, y: -21.535278}
@@ -5994,7 +5994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136305863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 117.089645, y: -43.29625, z: -14.999999}
+  m_LocalPosition: {x: 117.09917, y: -40.7, z: -14.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10265,6 +10265,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ba716adb044f0114881d23e46a29df79, type: 3}
   - {fileID: 21300000, guid: 3b701459a8570ec4b9ce86a0c955fbd5, type: 3}
   - {fileID: 21300000, guid: 90ca51d31d97c8b42a51935e1e7331f7, type: 3}
+  - {fileID: 21300000, guid: ab4514d285cd2924091bd61a76dc51d2, type: 3}
   textDefinitions:
   - s
   - d
@@ -10643,7 +10644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: -1.302155, y: 1.903752, z: 0.0000006754709}
+  m_TrackedObjectOffset: {x: -1.302155, y: 4.5000005, z: 0.0000006754709}
   m_LookaheadTime: 1
   m_LookaheadSmoothing: 5
   m_LookaheadIgnoreY: 0
@@ -11776,7 +11777,7 @@ SpriteRenderer:
   m_Size: {x: 5.89, y: 4.43}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2089564340
