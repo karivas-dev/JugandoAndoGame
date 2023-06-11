@@ -18,6 +18,8 @@ public class Interactable : MonoBehaviour
 	"d",
 	"NO","jaj", "r", 
 	};
+	private bool isDialogActive = false;
+
 
 	private bool hasInteracted = false;
 	private bool dialogIn = false;
@@ -35,30 +37,31 @@ public class Interactable : MonoBehaviour
 		{
 			if (spriteIndex < sprites.Count)
 				ChangeSprite();
+			else if (!hasInteracted)
+			{
+				hasInteracted = true;
+				textElement.text = textDefinitions[textIndex];
+				player.GetComponent<Movement>().enabled = false;
+				dialogBox.SetActive(true);
+				isDialogActive = true;
+			}
+			else if (isDialogActive)
+			{
+				dialogBox.SetActive(false);
+				isDialogActive = false;
+				player.GetComponent<Movement>().enabled = true;
+			}
 			else
 			{
-				if (!hasInteracted)
-				{
-					hasInteracted = true;
-					
-					textElement.text = textDefinitions[textIndex];
-					textIndex++;
-					player.GetComponent<Movement>().enabled = false;
-					dialogBox.SetActive(true);
-					
-					Debug.Log(textIndex);
-
-					Debug.Log(textElement.text);
-
-				}
-				else
-				{
-					player.GetComponent<Movement>().enabled = true;
-					dialogBox.SetActive(false);
-				}
+				dialogBox.SetActive(true);
+				isDialogActive = true;
 			}
 		}
 	}
+
+
+
+
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
