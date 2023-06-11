@@ -1594,6 +1594,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6961650820863729218, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961650820863729218, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.83
+      objectReference: {fileID: 0}
     - target: {fileID: 6961650820863729219, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
       propertyPath: buildingNumber
       value: 2
@@ -1601,6 +1609,14 @@ PrefabInstance:
     - target: {fileID: 6961650820863729223, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
       propertyPath: m_Name
       value: BuildingCNR
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961650820863729244, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6961650820863729244, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.83
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
@@ -1704,13 +1720,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7779a7e7573e9a447b8dfb4526cae05a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactAction:
-    m_PersistentCalls:
-      m_Calls: []
   isInRange: 0
-  isTriggered: 0
   interactKey: 120
-  player: {fileID: 0}
   buildingNumber: 2
 --- !u!61 &1339646260
 BoxCollider2D:
