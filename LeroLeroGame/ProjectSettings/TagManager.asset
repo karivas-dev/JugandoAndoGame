@@ -9,7 +9,6 @@ TagManager:
   - Trap
   - MovingPlatform
   - GM
-  - BuildingTrigger
   layers:
   - Default
   - TransparentFX

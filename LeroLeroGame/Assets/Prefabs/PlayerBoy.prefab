@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2056151458616837752}
   - component: {fileID: 5952876901389063356}
   - component: {fileID: 2056151458616837753}
-  - component: {fileID: 5420067967639909233}
   - component: {fileID: 3291031359303177611}
   m_Layer: 0
   m_Name: PlayerBoy
@@ -162,20 +161,6 @@ MonoBehaviour:
   bottomOffset: {x: 0, y: -0.79}
   rightOffset: {x: 0.5, y: -0.33}
   leftOffset: {x: -0.5, y: -0.33}
---- !u!114 &5420067967639909233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056151458616837754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac132a45a7efe6b4b83757a0bd975be3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  finishKey: 118
-  worldmapScene: MapWorld
 --- !u!114 &3291031359303177611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 2056151459175998806}
   rb: {fileID: 2056151458616837757}
-  gameMaster: {fileID: 0}
 --- !u!1 &2056151459172715976
 GameObject:
   m_ObjectHideFlags: 0
