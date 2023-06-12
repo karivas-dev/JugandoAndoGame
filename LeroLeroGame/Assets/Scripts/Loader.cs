@@ -8,6 +8,7 @@ public static class Loader
 {
     public enum Scene {
         MapWorld,
+        MapWorld2,
         IndustrialProperty,
         CopyRight,
         LoadingScene

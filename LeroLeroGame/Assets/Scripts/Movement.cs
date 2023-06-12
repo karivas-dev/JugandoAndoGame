@@ -262,11 +262,16 @@ public class Movement : MonoBehaviour
         hasDashed = true;
 
         anim.SetTrigger("dash");
-
-        rb.velocity = Vector2.zero;
+        if (rb.bodyType != RigidbodyType2D.Static)
+        {
+            rb.velocity = Vector2.zero;
+        }
         Vector2 dir = new Vector2(x, y);
 
-        rb.velocity += dir.normalized * dashSpeed;
+        if (rb.bodyType != RigidbodyType2D.Static)
+        {
+            rb.velocity += dir.normalized * dashSpeed;
+        }
         StartCoroutine(DashWait());
     }
 

@@ -8,7 +8,6 @@ public class BuildingTrigger : MonoBehaviour
 	public KeyCode interactKey;
     public int buildingNumber;
 
-	// Update is called once per frame
 	void Update()
 	{
 		if (isInRange)
@@ -22,10 +21,11 @@ public class BuildingTrigger : MonoBehaviour
                         break;
 
                     case 2:
-						Loader.Load(Loader.Scene.IndustrialProperty);
+						Debug.Log("Aun no puedes acceder a este nivel");
 						break;
 
                     case 3:
+						
                         break;
                 }
 			}
