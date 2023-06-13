@@ -230,7 +230,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 315e8e7c1bffb1e448cb666d54ac60a3, type: 3}
   - {fileID: 21300000, guid: e00623c6cd06b0d41acbf7020618772c, type: 3}
   - {fileID: 21300000, guid: d7b4defba62d2b54ca5913509e040a6d, type: 3}
-  count: {fileID: 0}
+  count: {fileID: 1813782267}
 --- !u!61 &3344354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -539,7 +539,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &87163146 stripped
 Transform:
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 66f89cb9bd32fa44db52232602882ddc, type: 3}
   - {fileID: 21300000, guid: 3658c2ce3fd6c4a438127fa9514663b8, type: 3}
   - {fileID: 21300000, guid: 08d9d23f084a5354db940044000839bc, type: 3}
-  count: {fileID: 0}
+  count: {fileID: 1813782267}
 --- !u!61 &167968395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2ea762562f453fa49a5ac2fe68a0b82d, type: 3}
   - {fileID: 21300000, guid: 897d97fda7c9bab469d615d8efce1cc1, type: 3}
   - {fileID: 21300000, guid: 33de3243f4893de43a4982b64cbefecf, type: 3}
-  count: {fileID: 0}
+  count: {fileID: 1813782267}
 --- !u!61 &175551679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2999,7 +2999,7 @@ Transform:
   - {fileID: 1347914791}
   - {fileID: 1424354119}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &503798551 stripped
 Transform:
@@ -3354,11 +3354,10 @@ Transform:
   - {fileID: 167968397}
   - {fileID: 844860384}
   - {fileID: 175551681}
-  - {fileID: 1909610695}
   - {fileID: 1316553606}
   - {fileID: 1124045755}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &600824959
 Animator:
@@ -3706,11 +3705,6 @@ SpriteRenderer:
 --- !u!1 &685634608 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6509907056114349090, guid: d69502b574880e447b38b67e584884da, type: 3}
-  m_PrefabInstance: {fileID: 1065311173}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &685634611 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6509907056114349093, guid: d69502b574880e447b38b67e584884da, type: 3}
   m_PrefabInstance: {fileID: 1065311173}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &708551813
@@ -4153,7 +4147,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777080436
 GameObject:
@@ -4912,7 +4906,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2ea762562f453fa49a5ac2fe68a0b82d, type: 3}
   - {fileID: 21300000, guid: 897d97fda7c9bab469d615d8efce1cc1, type: 3}
   - {fileID: 21300000, guid: 33de3243f4893de43a4982b64cbefecf, type: 3}
-  count: {fileID: 0}
+  count: {fileID: 1813782267}
 --- !u!61 &844860382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5068,7 +5062,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &866805864
 MonoBehaviour:
@@ -6038,7 +6032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6509907057452002354, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6509907057452002354, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6204,7 +6198,7 @@ Transform:
   - {fileID: 1977021992}
   - {fileID: 403039690}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1096311183
 GameObject:
@@ -6440,7 +6434,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 600824958}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1124045756
 BoxCollider2D:
@@ -6489,7 +6483,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 275625feb5b040f4daaaf60bccc46226, type: 3}
   - {fileID: 21300000, guid: a72982d7d530edb40bcf542d633f1449, type: 3}
   - {fileID: 21300000, guid: 6f80ffdc9acff774d88b4165fc930ab8, type: 3}
-  count: {fileID: 0}
+  count: {fileID: 1813782267}
 --- !u!212 &1124045758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7006,7 +7000,7 @@ Transform:
   - {fileID: 121065074}
   - {fileID: 2131948661}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1196617750
 GameObject:
@@ -7154,7 +7148,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1198642317
 MonoBehaviour:
@@ -7844,7 +7838,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 600824958}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1316553607
 BoxCollider2D:
@@ -7892,7 +7886,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: aa3043fc2527e1745b6a3801f790c797, type: 3}
   - {fileID: 21300000, guid: dd8a0fc091f750d4985c0c3e56f54956, type: 3}
   - {fileID: 21300000, guid: 9fd2c924509aab94eaab860125b435a0, type: 3}
-  count: {fileID: 0}
+  count: {fileID: 1813782267}
 --- !u!212 &1316553609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9477,7 +9471,7 @@ Transform:
   m_Children:
   - {fileID: 325090595}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1575948280
 GameObject:
@@ -10944,7 +10938,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3b701459a8570ec4b9ce86a0c955fbd5, type: 3}
   - {fileID: 21300000, guid: 90ca51d31d97c8b42a51935e1e7331f7, type: 3}
   - {fileID: 21300000, guid: ab4514d285cd2924091bd61a76dc51d2, type: 3}
-  count: {fileID: 0}
+  count: {fileID: 1813782267}
 --- !u!61 &1763500006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11104,7 +11098,7 @@ Transform:
   - {fileID: 1017909581}
   - {fileID: 1117904897}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1772792437
 GameObject:
@@ -11343,15 +11337,15 @@ RectTransform:
   m_GameObject: {fileID: 1813782266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6666666, y: 0.6666666, z: 0.6666666}
+  m_LocalScale: {x: 0.54791665, y: 0.54791665, z: 0.54791665}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 685634611}
-  m_RootOrder: 2
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -111.66522, y: 75.470795}
+  m_AnchoredPosition: {x: 15.253502, y: 1164.4906}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1815510489
@@ -12080,7 +12074,7 @@ Transform:
   m_Children:
   - {fileID: 361944088}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1909610694
 GameObject:
@@ -12109,13 +12103,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909610694}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 112.9, y: -145.9, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 600824958}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1909610696
 MonoBehaviour:
@@ -13031,7 +13025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3042603309280951406, guid: af3de44580ebbe440b7a2aacfdd1c268, type: 3}
       propertyPath: m_RootOrder
-      value: 23
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3042603309280951406, guid: af3de44580ebbe440b7a2aacfdd1c268, type: 3}
       propertyPath: m_AnchorMax.x
