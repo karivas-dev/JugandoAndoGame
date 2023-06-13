@@ -40,7 +40,7 @@ public class ScoreManager : MonoBehaviour
         if (currentHealth <= 0)
         {   
             currentHealth = 0;
-            SceneManager.LoadScene("VictoryScreen");
+            SceneManager.LoadScene("MapWorld2");
         }
     }
 

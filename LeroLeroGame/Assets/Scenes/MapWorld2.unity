@@ -1184,6 +1184,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3042603308391022315, guid: af3de44580ebbe440b7a2aacfdd1c268, type: 3}
+      propertyPath: m_text
+      value: Pulsa "Esc" para reanudar
+      objectReference: {fileID: 0}
     - target: {fileID: 3042603309280951402, guid: af3de44580ebbe440b7a2aacfdd1c268, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -1437,7 +1441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185588952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.119996, y: -3.750062, z: -12}
+  m_LocalPosition: {x: 15.119992, y: -3.750062, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1774,6 +1778,10 @@ MonoBehaviour:
   isInRange: 0
   interactKey: 120
   buildingNumber: 2
+  canvas: {fileID: 0}
+  hint: No puedes ingresar al bosque, tienes otras cosas que hacer
+  textElement: {fileID: 0}
+  player: {fileID: 0}
 --- !u!61 &1339646260
 BoxCollider2D:
   m_ObjectHideFlags: 0

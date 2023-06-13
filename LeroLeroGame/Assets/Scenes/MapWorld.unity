@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3042603308391022315, guid: af3de44580ebbe440b7a2aacfdd1c268, type: 3}
+      propertyPath: m_text
+      value: Pulsa "Esc" para reanudar
+      objectReference: {fileID: 0}
     - target: {fileID: 3042603309280951402, guid: af3de44580ebbe440b7a2aacfdd1c268, type: 3}
       propertyPath: m_Name
       value: PauseMenu
@@ -1601,7 +1605,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185588952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.320557, y: -16.600048, z: -12}
+  m_LocalPosition: {x: 33.344543, y: -16.600048, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2897,7 +2901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832539188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.071754, y: -16.6, z: -12}
+  m_LocalPosition: {x: 80.062164, y: -16.6, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
