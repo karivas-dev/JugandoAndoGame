@@ -75,171 +75,173 @@ public class Movement : MonoBehaviour
     
     void Update()
     {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-        float xRaw = Input.GetAxisRaw("Horizontal");
-        float yRaw = Input.GetAxisRaw("Vertical");
-        Vector2 dir = new Vector2(x, y);
+        if(!PauseMenu.isPaused)
+        {
+            float x = Input.GetAxis("Horizontal");
+            float y = Input.GetAxis("Vertical");
+            float xRaw = Input.GetAxisRaw("Horizontal");
+            float yRaw = Input.GetAxisRaw("Vertical");
+            Vector2 dir = new Vector2(x, y);
 
-        if (rb.bodyType != RigidbodyType2D.Static)
-        {
-            Walk(dir);
-        }
-        anim.SetHorizontalMovement(x, y, rb.velocity.y);
-
-        if (Input.GetMouseButton(1) && canRun)
-        {
-            speed = extraSpeed;
-            isRunning = true;
-        }
-        if (Input.GetMouseButtonUp(1))
-        {
-            speed = baseSpeed;
-            isRunning = false;
-        }
-
-        if (Mathf.Abs(rb.velocity.x) >= 0.1f && isRunning)
-        {
-            if (actualSprintTime > 0)
+            if (rb.bodyType != RigidbodyType2D.Static)
             {
-                actualSprintTime -= Time.deltaTime;
+                Walk(dir);
             }
-            else
+            anim.SetHorizontalMovement(x, y, rb.velocity.y);
+
+            if (Input.GetMouseButton(1) && canRun)
+            {
+                speed = extraSpeed;
+                isRunning = true;
+            }
+            if (Input.GetMouseButtonUp(1))
             {
                 speed = baseSpeed;
                 isRunning = false;
-                canRun = false;
-                nextSprintTime = Time.time + timeBetweenSprint;
             }
-        }
 
-        if (!isRunning && actualSprintTime <= sprintTime && Time.time >= nextSprintTime)
-        {
-            actualSprintTime += Time.deltaTime;
-            if (actualSprintTime >= sprintTime)
+            if (Mathf.Abs(rb.velocity.x) >= 0.1f && isRunning)
             {
-                canRun = true;
+                if (actualSprintTime > 0)
+                {
+                    actualSprintTime -= Time.deltaTime;
+                }
+                else
+                {
+                    speed = baseSpeed;
+                    isRunning = false;
+                    canRun = false;
+                    nextSprintTime = Time.time + timeBetweenSprint;
+                }
             }
-        }
 
-        if (coll.onWall && Input.GetButton("Fire3") && canMove)
-        {
-            if (side != coll.wallSide)
+            if (!isRunning && actualSprintTime <= sprintTime && Time.time >= nextSprintTime)
+            {
+                actualSprintTime += Time.deltaTime;
+                if (actualSprintTime >= sprintTime)
+                {
+                    canRun = true;
+                }
+            }
+
+            if (coll.onWall && Input.GetButton("Fire3") && canMove)
+            {
+                if (side != coll.wallSide)
                 anim.Flip(side * -1);
-            wallGrab = true;
-            wallSlide = false;
-        }
-
-        if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
-        {
-            wallGrab = false;
-            wallSlide = false;
-        }
-
-        if (coll.onGround && !isDashing)
-        {
-            wallJumped = false;
-            GetComponent<BetterJumping>().enabled = true;
-            coyoteTimeCounter = coyoteTime; 
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime; 
-        }
-
-        if (coll.onWall && !wallJumped && !isDashing)
-        {
-            hasDashed = false;
-            wallJumped = false;
-        }
-
-        if (wallGrab && !isDashing)
-        {
-            rb.gravityScale = 0;
-            if (x > .2f || x < -.2f)
-                rb.velocity = new Vector2(rb.velocity.x, 0);
-
-            float speedModifier = y > 0 ? .5f : 1;
-
-            rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
-        }
-        else
-        {
-            rb.gravityScale = 3;
-        }
-
-        if (coll.onWall && !coll.onGround)
-        {
-            if (x != 0 && !wallGrab)
-            {
-                wallSlide = true;
-                WallSlide();
+                wallGrab = true;
+                wallSlide = false;
             }
-        }
 
-        if (!coll.onWall || coll.onGround)
-            wallSlide = false;
-
-        if (Input.GetButtonDown("Jump"))
-        {
-            anim.SetTrigger("jump");
-
-            if (coll.onGround || coyoteTimeCounter > 0) 
+            if (Input.GetButtonUp("Fire3") || !coll.onWall || !canMove)
             {
-                Jump(Vector2.up, false);
-                coyoteTimeCounter = 0; 
+                wallGrab = false;
+                wallSlide = false;
+            }
+
+            if (coll.onGround && !isDashing)
+            {
+                wallJumped = false;
+                GetComponent<BetterJumping>().enabled = true;
+                coyoteTimeCounter = coyoteTime; 
             }
             else
             {
-                
-                jumpBuffered = true;
-                jumpBufferCounter = jumpBufferTime;
+                coyoteTimeCounter -= Time.deltaTime; 
             }
-        }
 
-        if (Input.GetButtonDown("Fire1") && !hasDashed)
-        {
-            if (xRaw != 0 || yRaw != 0)
-                Dash(xRaw, yRaw);
-        }
+            if (coll.onWall && !wallJumped && !isDashing)
+            {
+                hasDashed = false;
+                wallJumped = false;
+            }
 
-        if (coll.onGround && !groundTouch)
-        {
-            GroundTouch();
-            groundTouch = true;
-        }
+            if (wallGrab && !isDashing)
+            {
+                rb.gravityScale = 0;
+                if (x > .2f || x < -.2f)
+                    rb.velocity = new Vector2(rb.velocity.x, 0);
 
-        if (!coll.onGround && groundTouch)
-        {
-            groundTouch = false;
-        }
+                float speedModifier = y > 0 ? .5f : 1;
 
-        WallParticle(y);
+                rb.velocity = new Vector2(rb.velocity.x, y * (speed * speedModifier));
+            }
+            else
+            {
+                rb.gravityScale = 3;
+            }
 
-        if (wallGrab || wallSlide || !canMove)
-            return;
+            if (coll.onWall && !coll.onGround)
+            {
+                if (x != 0 && !wallGrab)
+                {
+                    wallSlide = true;
+                    WallSlide();
+                }
+            }
 
-        if (x > 0)
-        {
-            side = 1;
-            anim.Flip(side);
-        }
-        if (x < 0)
-        {
-            side = -1;
-            anim.Flip(side);
-        }
+            if (!coll.onWall || coll.onGround)
+                wallSlide = false;
+
+            if (Input.GetButtonDown("Jump"))
+            {
+                anim.SetTrigger("jump");
+
+                if (coll.onGround || coyoteTimeCounter > 0) 
+                {
+                    Jump(Vector2.up, false);
+                    coyoteTimeCounter = 0; 
+                }
+                else
+                {
+                    jumpBuffered = true;
+                    jumpBufferCounter = jumpBufferTime;
+                }
+            }
+
+            if (Input.GetButtonDown("Fire1") && !hasDashed)
+            {
+                if (xRaw != 0 || yRaw != 0)
+                    Dash(xRaw, yRaw);
+            }
+
+            if (coll.onGround && !groundTouch)
+            {
+                GroundTouch();
+                groundTouch = true;
+            }
+
+            if (!coll.onGround && groundTouch)
+            {
+                groundTouch = false;
+            }
+
+            WallParticle(y);
+
+            if (wallGrab || wallSlide || !canMove)
+                return;
+
+            if (x > 0)
+            {
+                side = 1;
+                anim.Flip(side);
+            }
+            if (x < 0)
+            {
+                side = -1;
+                anim.Flip(side);
+            }
 
         
-        if (jumpBuffered)
-        {
-            jumpBufferCounter -= Time.deltaTime;
-            if (jumpBufferCounter <= 0)
+            if (jumpBuffered)
             {
-                
-                jumpBuffered = false;
+                jumpBufferCounter -= Time.deltaTime;
+                if (jumpBufferCounter <= 0)
+                {       
+                    jumpBuffered = false;
+                }
             }
         }
+    
     }
 
     void GroundTouch()
