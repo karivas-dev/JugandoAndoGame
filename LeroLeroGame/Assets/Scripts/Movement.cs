@@ -18,6 +18,7 @@ public class Movement : MonoBehaviour
     public float slideSpeed = 5;
     public float wallJumpLerp = 10;
     public float dashSpeed = 70;
+    public KeyCode dashKey;
 
     [Space]
     [Header("Sprint")]
@@ -198,7 +199,7 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonDown("Fire1") && !hasDashed)
+            if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(dashKey) && !hasDashed)
             {
                 if (xRaw != 0 || yRaw != 0)
                     Dash(xRaw, yRaw);
