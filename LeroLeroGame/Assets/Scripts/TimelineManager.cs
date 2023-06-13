@@ -9,6 +9,7 @@ public class TimelineManager : MonoBehaviour
     private PlayableDirector director;
     public WordTimer wordTimer;
     public CountDown countdown;
+    public EntryNemy entry;
     public string cutscene;
     
     void Start() {
@@ -27,6 +28,7 @@ public class TimelineManager : MonoBehaviour
             case "EntryNemy":
                 wordTimer.isActive = true; 
                 countdown.isActive = true;
+                entry.isInRange = false;
                 break;
 
             case "Robbery":
