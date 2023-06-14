@@ -233,6 +233,7 @@ MonoBehaviour:
   count: {fileID: 1813782267}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!61 &3344354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1115,6 +1116,7 @@ MonoBehaviour:
   count: {fileID: 1813782267}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!61 &167968395
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1251,6 +1253,7 @@ MonoBehaviour:
   count: {fileID: 1813782267}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!61 &175551679
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3179,7 +3182,6 @@ GameObject:
   - component: {fileID: 585795398}
   - component: {fileID: 585795397}
   - component: {fileID: 585795401}
-  - component: {fileID: 585795402}
   m_Layer: 5
   m_Name: PrizeCanvas
   m_TagString: Untagged
@@ -3292,18 +3294,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &585795402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585795396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 319dd5c403a798548af4014f4722713b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &597929263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,7 +4802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834705891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.770805, y: -137.1, z: -12}
+  m_LocalPosition: {x: 59.769173, y: -137.1, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5076,6 +5066,7 @@ MonoBehaviour:
   count: {fileID: 1813782267}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!61 &844860382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6935,6 +6926,7 @@ MonoBehaviour:
   count: {fileID: 1813782267}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!212 &1124045758
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7090,7 +7082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136305863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 59.770805, y: -137.1, z: -12}
+  m_LocalPosition: {x: 59.769173, y: -137.1, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8341,6 +8333,7 @@ MonoBehaviour:
   count: {fileID: 1813782267}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!212 &1316553609
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11471,6 +11464,7 @@ MonoBehaviour:
   count: {fileID: 1813782267}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!61 &1763500006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12699,6 +12693,7 @@ MonoBehaviour:
   count: {fileID: 0}
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
+  image: {fileID: 1588100964}
 --- !u!61 &1909610697
 BoxCollider2D:
   m_ObjectHideFlags: 0
