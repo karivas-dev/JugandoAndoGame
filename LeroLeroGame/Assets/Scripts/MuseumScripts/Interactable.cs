@@ -34,6 +34,7 @@ public class Interactable : MonoBehaviour
     public Canvas prizeCanvas;
     private Animator winningAnim;
     public GameObject winningObject;
+    private bool isAnimationPlaying = false;
 
     private void Awake()
     {
@@ -43,22 +44,19 @@ public class Interactable : MonoBehaviour
 
     private void Update()
     {
-        if (isInRange && Input.GetKeyDown(interactKey))
+        if (isInRange && Input.GetKeyDown(interactKey) && !isAnimationPlaying)
         {
             if (spriteIndex < sprites.Count)
-            {
                 ChangeSprite();
-            }
             else if (!hasInteracted)
             {
                 hasInteracted = true;
+                textElement.text = textDefinitions[textIndex];
                 player.GetComponent<Movement>().enabled = false;
                 winningObject.SetActive(true);
                 winningAnim.Play("WinningPrize");
                 StartCoroutine(ShowDialogAfterTimeline());
-
-                dialogBox.SetActive(false);
-                isDialogActive = false;
+                isAnimationPlaying = true; // Establecer isAnimationPlaying a true cuando se inicia la animación
                 textIndex++;
             }
             else if (isDialogActive)
@@ -82,7 +80,8 @@ public class Interactable : MonoBehaviour
         isDialogActive = true;
         textElement.text = textDefinitions[textIndex];
         player.GetComponent<Movement>().enabled = true;
-		winningObject.SetActive(false);
+        winningObject.SetActive(false); // Desactiva el objeto de la animación
+        isAnimationPlaying = false; // Restablecer isAnimationPlaying a false cuando la animación haya terminado
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
