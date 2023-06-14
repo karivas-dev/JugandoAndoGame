@@ -35,6 +35,8 @@ public class Interactable : MonoBehaviour
     private Animator winningAnim;
     public GameObject winningObject;
     private bool isAnimationPlaying = false;
+    public Image image;
+    
 
     private void Awake()
     {
@@ -50,6 +52,8 @@ public class Interactable : MonoBehaviour
                 ChangeSprite();
             else if (!hasInteracted)
             {
+                Debug.Log(spriteRenderer.name);
+                image.sprite = spriteRenderer.sprite;
                 hasInteracted = true;
                 textElement.text = textDefinitions[textIndex];
                 player.GetComponent<Movement>().enabled = false;
@@ -84,7 +88,6 @@ public class Interactable : MonoBehaviour
         dialogBox.SetActive(true);
         isDialogActive = true;
         textElement.text = textDefinitions[textIndex];
-        player.GetComponent<Movement>().enabled = true;
         winningObject.SetActive(false); 
         isAnimationPlaying = false; 
     }
