@@ -16,12 +16,12 @@ public class Interactable : MonoBehaviour
 	private bool isInRange = false;
 	private int spriteIndex = 0;
 	public static string[] textDefinitions = {"La propiedad intelectual es tener derechos sobre nuestras ideas y creaciones. Protege lo que creamos y nos asegura que nadie pueda copiar o usar nuestras creaciones sin permiso.",
-	"La propiedad industrial protege invenciones y creaciones comerciales, como marcas comerciales y patentes. Las marcas comerciales protegen los nombres y logotipos, y las patentes protegen las invenciones útiles y nuevas.",
-	" El derecho de autor protege obras artísticas y literarias, como canciones, libros y pinturas. Nos da el derecho exclusivo sobre nuestras creaciones y evita que otros las copien o usen sin permiso.",
-	"Las patentes protegen nuestras invenciones útiles y nuevas. Nos otorgan el derecho exclusivo de fabricar y vender nuestra invención, evitando que otros se aprovechen de nuestro trabajo.",
-	"El registro es el proceso para obtener protección legal de nuestras creaciones. Al registrar nuestras marcas comerciales y obras artísticas, aseguramos que nadie las copie sin permiso y se reconocen como nuestras.",
+	"La propiedad industrial protege invenciones y creaciones comerciales, como marcas comerciales y patentes. Las marcas comerciales protegen los nombres y logotipos, y las patentes protegen las invenciones ï¿½tiles y nuevas.",
+	" El derecho de autor protege obras artï¿½sticas y literarias, como canciones, libros y pinturas. Nos da el derecho exclusivo sobre nuestras creaciones y evita que otros las copien o usen sin permiso.",
+	"Las patentes protegen nuestras invenciones ï¿½tiles y nuevas. Nos otorgan el derecho exclusivo de fabricar y vender nuestra invenciï¿½n, evitando que otros se aprovechen de nuestro trabajo.",
+	"El registro es el proceso para obtener protecciï¿½n legal de nuestras creaciones. Al registrar nuestras marcas comerciales y obras artï¿½sticas, aseguramos que nadie las copie sin permiso y se reconocen como nuestras.",
 	"Una vez protegidas, podemos comercializar nuestras invenciones y obras. Esto implica vender nuestras invenciones a empresas interesadas o licenciar nuestros derechos de autor para que otros puedan usar nuestras creaciones a cambio de un pago.",
-	"Proteger nuestras creaciones nos asegura reconocimiento y recompensa por nuestro trabajo. Fomenta la creatividad y la innovación en la sociedad al valorar y respetar el esfuerzo de cada individuo."
+	"Proteger nuestras creaciones nos asegura reconocimiento y recompensa por nuestro trabajo. Fomenta la creatividad y la innovaciï¿½n en la sociedad al valorar y respetar el esfuerzo de cada individuo."
   };
 	private bool isDialogActive = false;
 
@@ -32,9 +32,16 @@ public class Interactable : MonoBehaviour
 	private static int textIndex = 0;
 	private SpriteRenderer spriteRenderer;
 
+	//public SpriteRenderer spriteWinning;
+    public Canvas prizeCanvas;
+    private bool StatsUp = false;
+	private Animator winningAnim;
+	public GameObject winningObject;
+
 	private void Awake()
 	{
 		spriteRenderer = GetComponent<SpriteRenderer>();
+		winningAnim = prizeCanvas.GetComponent<Animator>();
 	}
 
 	private void Update()
@@ -49,6 +56,10 @@ public class Interactable : MonoBehaviour
 				hasInteracted = true;
 				textElement.text = textDefinitions[textIndex];
 				player.GetComponent<Movement>().enabled = false;
+				winningObject.SetActive(true);
+				winningAnim.Play("WinningPrize");
+				StartCoroutine(EnableAfterTimeline());
+
 				dialogBox.SetActive(true);
 				isDialogActive = true;
 				textIndex++;
@@ -65,11 +76,12 @@ public class Interactable : MonoBehaviour
 				isDialogActive = true;
 			}
 		}
-	}
+	}        
 
-
-
-
+    IEnumerator EnableAfterTimeline()
+    {
+        yield return new WaitForSeconds(500f); 
+    }
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{

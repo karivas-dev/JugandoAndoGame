@@ -17,7 +17,6 @@ public class TimelineManager : MonoBehaviour
         director.Play();
 
         StartCoroutine(EnableAfterTimeline());
-        
     }
 
     IEnumerator EnableAfterTimeline()
