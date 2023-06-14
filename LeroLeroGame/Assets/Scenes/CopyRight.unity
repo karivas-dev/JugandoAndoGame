@@ -2763,6 +2763,10 @@ PrefabInstance:
       value: 106
       objectReference: {fileID: 0}
     - target: {fileID: 2056151458616837759, guid: 82020ebf64653064da4cb1a83f4982cc, type: 3}
+      propertyPath: climbKey
+      value: 107
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056151458616837759, guid: 82020ebf64653064da4cb1a83f4982cc, type: 3}
       propertyPath: baseSpeed
       value: 15
       objectReference: {fileID: 0}

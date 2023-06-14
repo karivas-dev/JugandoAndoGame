@@ -56,7 +56,7 @@ public class Interactable : MonoBehaviour
                 winningObject.SetActive(true);
                 winningAnim.Play("WinningPrize");
                 StartCoroutine(ShowDialogAfterTimeline());
-                isAnimationPlaying = true; // Establecer isAnimationPlaying a true cuando se inicia la animación
+                isAnimationPlaying = true; 
                 textIndex++;
             }
             else if (isDialogActive)
@@ -80,8 +80,8 @@ public class Interactable : MonoBehaviour
         isDialogActive = true;
         textElement.text = textDefinitions[textIndex];
         player.GetComponent<Movement>().enabled = true;
-        winningObject.SetActive(false); // Desactiva el objeto de la animación
-        isAnimationPlaying = false; // Restablecer isAnimationPlaying a false cuando la animación haya terminado
+        winningObject.SetActive(false); 
+        isAnimationPlaying = false; 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -19,6 +19,7 @@ public class Movement : MonoBehaviour
     public float wallJumpLerp = 10;
     public float dashSpeed = 70;
     public KeyCode dashKey;
+    public KeyCode climbKey;
 
     [Space]
     [Header("Sprint")]
@@ -125,7 +126,7 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            if (coll.onWall && Input.GetButton("Fire3") && canMove)
+            if (coll.onWall && Input.GetKeyDown(climbKey) || Input.GetButtonDown("Fire3")  && canMove)
             {
                 if (side != coll.wallSide)
                 anim.Flip(side * -1);
