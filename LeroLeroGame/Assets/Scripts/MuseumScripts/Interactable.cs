@@ -63,6 +63,11 @@ public class Interactable : MonoBehaviour
             {
                 dialogBox.SetActive(false);
                 isDialogActive = false;
+				if (spriteIndex == sprites.Count)
+        		{
+            		interactions++;
+            		count.text = "Objetos creados: " + interactions + "/8";
+        		}
                 player.GetComponent<Movement>().enabled = true;
             }
             else
@@ -100,12 +105,6 @@ public class Interactable : MonoBehaviour
     {
         spriteRenderer.sprite = sprites[spriteIndex];
         spriteIndex++;
-
-        if (spriteIndex == sprites.Count)
-        {
-            interactions++;
-            count.text = "Objetos creados: " + interactions + "/8";
-        }
     }
 }
 

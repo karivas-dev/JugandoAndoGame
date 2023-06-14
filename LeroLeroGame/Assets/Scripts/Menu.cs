@@ -12,7 +12,8 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);   
+        LevelFade.instance.FadeToNextLevel();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);   
         vCam.m_Lens.OrthographicSize = 7;
 		vCam.GetCinemachineComponent<CinemachineComposer>().m_ScreenX = 0.49f;
 		vCam.GetCinemachineComponent<CinemachineComposer>().m_ScreenX = 0.51f;
