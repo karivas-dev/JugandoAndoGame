@@ -126,7 +126,7 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            if (coll.onWall && Input.GetKeyDown(climbKey) || Input.GetButtonDown("Fire3")  && canMove)
+            if (coll.onWall && Input.GetButton("Fire3") && canMove)
             {
                 if (side != coll.wallSide)
                 anim.Flip(side * -1);
