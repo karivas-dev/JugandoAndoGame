@@ -9,9 +9,13 @@ public class WordInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(char letter in Input.inputString)
+        foreach(char letter in Input.inputString.ToLower())
         {
             wordManager.TypeLetter(letter);
         }    
     }
 }
+
+
+
+
