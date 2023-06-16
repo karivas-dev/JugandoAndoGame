@@ -200,7 +200,7 @@ public class Movement : MonoBehaviour
                 }
             }
 
-            if (Input.GetButtonDown("Fire1") || Input.GetKeyDown(dashKey) && !hasDashed)
+            if ((Input.GetButtonDown("Fire1") || (Input.GetKeyDown(dashKey) && dashKey != KeyCode.LeftControl && dashKey != KeyCode.RightControl)) && !hasDashed)
             {
                 if (xRaw != 0 || yRaw != 0)
                     Dash(xRaw, yRaw);
