@@ -3450,33 +3450,13 @@ GameObject:
   - component: {fileID: 1339646262}
   - component: {fileID: 1339646261}
   - component: {fileID: 1339646260}
-  - component: {fileID: 1339646259}
   m_Layer: 0
-  m_Name: Collectable1
+  m_Name: Doggo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1339646259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1339646258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7779a7e7573e9a447b8dfb4526cae05a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInRange: 0
-  interactKey: 120
-  buildingNumber: 2
-  canvas: {fileID: 0}
-  hint: No puedes ingresar al bosque, debes ir al museo a completar tu tarea.
-  textElement: {fileID: 0}
-  player: {fileID: 0}
 --- !u!61 &1339646260
 BoxCollider2D:
   m_ObjectHideFlags: 0
