@@ -33,6 +33,10 @@ public class TimelineManager : MonoBehaviour
             case "Robbery":
                 Loader.Load(Loader.Scene.IndustrialProperty);
                 break;
+            
+            case "WinningNemy":
+                
+                break;
         }
     }
 }
