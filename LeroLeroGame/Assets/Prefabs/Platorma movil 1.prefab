@@ -102,7 +102,7 @@ MonoBehaviour:
   - {fileID: 1370608213032366157}
   - {fileID: 1370608211865078404}
   speed: 2
-  additionalSpeed: 10
+  additionalSpeed: 20
 --- !u!61 &1370608211597393310
 BoxCollider2D:
   m_ObjectHideFlags: 0
