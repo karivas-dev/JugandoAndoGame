@@ -15,12 +15,12 @@ public class Interactable : MonoBehaviour
     private bool isInRange = false;
     private int spriteIndex = 0;
     public static string[] textDefinitions = {
-        "La propiedad intelectual es tener derechos sobre nuestras ideas y creaciones. Protege lo que creamos y nos asegura que nadie pueda copiar o usar nuestras creaciones sin permiso.",
-        "La propiedad industrial protege invenciones y creaciones comerciales, como marcas comerciales y patentes. Las marcas comerciales protegen los nombres y logotipos, y las patentes protegen las invenciones útiles y nuevas.",
-        "El derecho de autor protege obras artísticas y literarias, como canciones, libros y pinturas. Nos da el derecho exclusivo sobre nuestras creaciones y evita que otros las copien o usen sin permiso.",
-        "Las patentes protegen nuestras invenciones útiles y nuevas. Nos otorgan el derecho exclusivo de fabricar y vender nuestra invención, evitando que otros se aprovechen de nuestro trabajo.",
-        "El registro es el proceso para obtener protección legal de nuestras creaciones. Al registrar nuestras marcas comerciales y obras artísticas, aseguramos que nadie las copie sin permiso y se reconocen como nuestras.",
-        "Una vez protegidas, podemos comercializar nuestras invenciones y obras. Esto implica vender nuestras invenciones a empresas interesadas o licenciar nuestros derechos de autor para que otros puedan usar nuestras creaciones a cambio de un pago.",
+        "La propiedad intelectual es tener derechos sobre nuestras creaciones. Protege lo que creamos y nos asegura que nadie pueda copiar o usarlas sin permiso.",
+        "La propiedad industrial protege invenciones y creaciones como marcas y patentes. Las marcas protegen los nombres y logotipos, y las patentes protegen las invenciones útiles y nuevas.",
+        "El derecho de autor protege obras artísticas y literarias, como canciones, libros y pinturas. Nos da el derecho exclusivo sobre nuestras creaciones.",
+        "En El Salvador, el Centro Nacional de Registros es la institución encargada de los registros de creaciones y obras del país.",
+        "El registro es el proceso para obtener protección legal de nuestras creaciones. Al registrarlas aseguramos que nadie las copie sin permiso y se reconocen como nuestras.",
+        "Una vez protegidas, podemos comercializar nuestras invenciones y obras. Esto implica venderlas a empresas interesadas o licenciar nuestros derechos de autor para que otros puedan usar nuestras creaciones a cambio de un pago.",
         "Proteger nuestras creaciones nos asegura reconocimiento y recompensa por nuestro trabajo. Fomenta la creatividad y la innovación en la sociedad al valorar y respetar el esfuerzo de cada individuo."
     };
     private bool isDialogActive = false;
@@ -52,7 +52,6 @@ public class Interactable : MonoBehaviour
                 ChangeSprite();
             else if (!hasInteracted)
             {
-                Debug.Log(spriteRenderer.name);
                 image.sprite = spriteRenderer.sprite;
                 hasInteracted = true;
                 textElement.text = textDefinitions[textIndex];
