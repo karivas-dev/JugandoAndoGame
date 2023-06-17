@@ -10,6 +10,7 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
 
     [SerializeField] public TextMeshProUGUI scoreText;
+    [SerializeField] public GameObject director;
 
     //Nemy Max Health
     public int score = 1500;
@@ -40,7 +41,8 @@ public class ScoreManager : MonoBehaviour
         if (currentHealth <= 0)
         {   
             currentHealth = 0;
-            SceneManager.LoadScene("MapWorld2");
+            director.GetComponent<TimelineManager>().enabled = true;
+            //SceneManager.LoadScene("MapWorld2");
         }
     }
 
