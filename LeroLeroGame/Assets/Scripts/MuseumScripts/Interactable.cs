@@ -77,6 +77,7 @@ public class Interactable : MonoBehaviour
             {
                 dialogBox.SetActive(true);
                 isDialogActive = true;
+                player.GetComponent<Movement>().enabled = false;
             }
         }
     }

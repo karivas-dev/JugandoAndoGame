@@ -3,12 +3,42 @@ using TMPro;
 
 public class TextManager : MonoBehaviour
 {
+    public GameObject instructionCanvas;
     public GameObject firstCanvas;
     public GameObject secondCanvas;
+    public Animator verifyEntry;
+
     public TMP_InputField inputField1;
     public TMP_InputField inputField2;
     public TextMeshProUGUI text1Display;
     public TextMeshProUGUI text2Display;
+
+    private void Awake()
+    {
+        verifyEntry = firstCanvas.GetComponent<Animator>();
+    }
+
+    public void vamosButton()
+    {
+        instructionCanvas.SetActive(false);
+        firstCanvas.SetActive(true);
+        verifyEntry.Play("IntroForm");
+    }
+
+    public void enviarButton()
+    {
+        verifyEntry.Play("OutroForm");
+    }
+
+    public void siguienteButton()
+    {
+        verifyEntry.Play("PaymentStage");
+    }
+
+    public void pagarButton()
+    {
+        
+    }
 
     public void SwitchCanvas()
     {

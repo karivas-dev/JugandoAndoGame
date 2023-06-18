@@ -33,6 +33,12 @@ public class VcamSettings : MonoBehaviour
 				vCam.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
 				vCam.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = 0.5f;
                 break;
+            case "CNR":
+                confiner.m_BoundingShape2D = confinerShape;
+                vCam.m_Lens.OrthographicSize = (float)22.5;
+                vCam.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+				vCam.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenY = 0.5f;
+                break;
         }
     }
 }
