@@ -16,6 +16,9 @@ public class RobberyCutscene : MonoBehaviour
     public bool isInRange = false;
     public bool isTriggered = false;
 
+    public AudioSource museumBGM;
+    public AudioSource nemyBGM;
+
     void Update()
     {
         if(isInRange) 
@@ -27,8 +30,12 @@ public class RobberyCutscene : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision) 
     {
-        if(collision.gameObject.CompareTag("Player"))      
+        if(collision.gameObject.CompareTag("Player"))
+        {
             isInRange = true;        
+            museumBGM.Stop();
+            nemyBGM.Play();
+        }      
   
     }
 

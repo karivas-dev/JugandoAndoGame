@@ -18,6 +18,9 @@ public class ScoreManager : MonoBehaviour
     public int score = 1500;
     public int currentHealth = 1500;
 
+    public AudioSource museumBGM;
+    public AudioSource nemyBGM;
+
     [SerializeField] private NemyHealthBar _healthbar;
 
     private void Awake()
@@ -27,7 +30,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {   
-        score = 10;
+        score = 1500;
         currentHealth = score;
         scoreText.gameObject.SetActive(false);
 
@@ -46,6 +49,8 @@ public class ScoreManager : MonoBehaviour
             director.GetComponent<TimelineManager>().enabled = true;
             wordManager.GetComponent<WordManager>().enabled = false;
             typingCanvas.SetActive(false);
+            nemyBGM.Stop();
+            museumBGM.Play();
             Destroy(wordManager);
         }
     }

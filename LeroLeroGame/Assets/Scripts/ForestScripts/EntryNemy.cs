@@ -23,6 +23,8 @@ public class EntryNemy : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
+    public AudioSource nemyBGM;
+
     void Start()
     {
         animator.SetFloat("HorizontalAxis", 0);
@@ -48,6 +50,7 @@ public class EntryNemy : MonoBehaviour
                 canvas.SetActive(false);
                 animator.SetFloat("HorizontalAxis", 0);
                 director.GetComponent<TimelineManager>().enabled = true;
+                nemyBGM.Play();
                 isTriggered = false;
             }
         }
