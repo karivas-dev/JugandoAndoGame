@@ -1,5 +1,8 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
@@ -53,6 +56,12 @@ public class TextManager : MonoBehaviour
     public void playAgain()
     {
         certificate.Play("CertiOutro");
+        StartCoroutine(LoadAfterTimeline());
+    }
+
+    IEnumerator LoadAfterTimeline()
+    {
+        yield return new WaitForSeconds(3.0f); 
         Loader.Load(Loader.Scene.MapWorld);
     }
 }

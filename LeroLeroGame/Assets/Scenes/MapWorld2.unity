@@ -176,7 +176,7 @@ MonoBehaviour:
   m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.55
   m_ScreenY: 0.5
   m_CameraDistance: 12
   m_DeadZoneWidth: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.79
   m_SoftZoneHeight: 0.8
-  m_BiasX: 0
+  m_BiasX: 0.0000001334432
   m_BiasY: -0.0000001490116
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
@@ -2724,7 +2724,7 @@ Camera:
   far clip plane: 5000
   field of view: 80
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 22.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2748,7 +2748,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185588952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.119996, y: -3.750062, z: -12}
+  m_LocalPosition: {x: 19.99997, y: -11.250039, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2984,8 +2984,7 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.83
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6961650820863729218, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a177ec50003fa0049acd7a365ede5fa1, type: 3}
 --- !u!1001 &1199480389
 PrefabInstance:
@@ -4632,7 +4631,7 @@ MonoBehaviour:
   m_Follow: {fileID: 199478236}
   m_Lens:
     FieldOfView: 80
-    OrthographicSize: 15
+    OrthographicSize: 22.5
     NearClipPlane: 0.1
     FarClipPlane: 5000
     Dutch: 0
@@ -4656,7 +4655,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832539188}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.12, y: 1.63, z: -12}
+  m_LocalPosition: {x: 11.118446, y: 1.63, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

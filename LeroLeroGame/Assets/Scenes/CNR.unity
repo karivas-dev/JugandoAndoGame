@@ -418,7 +418,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 128112378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1196109585}
+        m_TargetAssemblyTypeName: TextManager, Assembly-CSharp
+        m_MethodName: playAgain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &128112378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6024,24 +6036,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0.75
-  m_LookaheadSmoothing: 30
+  m_LookaheadTime: 1
+  m_LookaheadSmoothing: 5
   m_LookaheadIgnoreY: 0
   m_XDamping: 1
-  m_YDamping: 6
+  m_YDamping: 1
   m_ZDamping: 1
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
+  m_ScreenX: 0.55
   m_ScreenY: 0.5
   m_CameraDistance: 12
-  m_DeadZoneWidth: 0.2
+  m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.79
   m_SoftZoneHeight: 0.8
   m_BiasX: 0.0000001334432
-  m_BiasY: 0
+  m_BiasY: -0.0000001490116
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0

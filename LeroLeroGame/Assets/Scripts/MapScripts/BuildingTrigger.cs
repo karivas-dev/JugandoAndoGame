@@ -43,7 +43,7 @@ public class BuildingTrigger : MonoBehaviour
                         break;
 
                     case 3:
-                        
+                        Loader.Load(Loader.Scene.CNR);
                         break;
                 }
             }
