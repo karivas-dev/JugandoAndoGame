@@ -231,6 +231,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e00623c6cd06b0d41acbf7020618772c, type: 3}
   - {fileID: 21300000, guid: d7b4defba62d2b54ca5913509e040a6d, type: 3}
   count: {fileID: 1813782267}
+  elementID: 0
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
@@ -1248,6 +1249,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3658c2ce3fd6c4a438127fa9514663b8, type: 3}
   - {fileID: 21300000, guid: 08d9d23f084a5354db940044000839bc, type: 3}
   count: {fileID: 1813782267}
+  elementID: 2
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
@@ -1385,6 +1387,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 897d97fda7c9bab469d615d8efce1cc1, type: 3}
   - {fileID: 21300000, guid: 33de3243f4893de43a4982b64cbefecf, type: 3}
   count: {fileID: 1813782267}
+  elementID: 4
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
@@ -5635,6 +5638,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 897d97fda7c9bab469d615d8efce1cc1, type: 3}
   - {fileID: 21300000, guid: 33de3243f4893de43a4982b64cbefecf, type: 3}
   count: {fileID: 1813782267}
+  elementID: 3
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
@@ -7774,6 +7778,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a72982d7d530edb40bcf542d633f1449, type: 3}
   - {fileID: 21300000, guid: 6f80ffdc9acff774d88b4165fc930ab8, type: 3}
   count: {fileID: 1813782267}
+  elementID: 6
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
@@ -9741,6 +9746,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd8a0fc091f750d4985c0c3e56f54956, type: 3}
   - {fileID: 21300000, guid: 9fd2c924509aab94eaab860125b435a0, type: 3}
   count: {fileID: 1813782267}
+  elementID: 5
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
@@ -13456,6 +13462,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 90ca51d31d97c8b42a51935e1e7331f7, type: 3}
   - {fileID: 21300000, guid: ab4514d285cd2924091bd61a76dc51d2, type: 3}
   count: {fileID: 1813782267}
+  elementID: 1
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
@@ -14910,6 +14917,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 897d97fda7c9bab469d615d8efce1cc1, type: 3}
   - {fileID: 21300000, guid: 33de3243f4893de43a4982b64cbefecf, type: 3}
   count: {fileID: 0}
+  elementID: 0
   prizeCanvas: {fileID: 585795399}
   winningObject: {fileID: 1773843956}
   image: {fileID: 1588100964}
