@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour
 
     [SerializeField] public TextMeshProUGUI scoreText;
     [SerializeField] public GameObject director;
+    [SerializeField] public GameObject typingCanvas;
+    [SerializeField] public GameObject wordManager;
 
     //Nemy Max Health
     public int score = 1500;
@@ -25,7 +27,7 @@ public class ScoreManager : MonoBehaviour
 
     void Start()
     {   
-        score = 1500;
+        score = 10;
         currentHealth = score;
         scoreText.gameObject.SetActive(false);
 
@@ -42,8 +44,17 @@ public class ScoreManager : MonoBehaviour
         {   
             currentHealth = 0;
             director.GetComponent<TimelineManager>().enabled = true;
-            //SceneManager.LoadScene("MapWorld2");
+            wordManager.GetComponent<WordManager>().enabled = false;
+            typingCanvas.SetActive(false);
+            Destroy(wordManager);
+            LoadSceneAfterTimeline();
         }
+    }
+
+    IEnumerator LoadSceneAfterTimeline()
+    {
+        yield return new WaitForSeconds(4f); 
+        Loader.Load(Loader.Scene.CNR);
     }
 
     void UpdateScoreText()
@@ -51,5 +62,4 @@ public class ScoreManager : MonoBehaviour
         _healthbar.UpdateHealthBar(score, currentHealth);
         scoreText.text = "Boss HP: " + currentHealth.ToString();
     }
-
 }

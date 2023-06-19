@@ -11,7 +11,8 @@ public static class Loader
         MapWorld2,
         IndustrialProperty,
         CopyRight,
-        LoadingScene
+        LoadingScene,
+        CNR
     }
 
     private static Action onLoaderCallback;
