@@ -5459,7 +5459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834705891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.270807, y: -134.9, z: -12}
+  m_LocalPosition: {x: 26.267796, y: -134.9, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7573,7 +7573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2736127579750595590, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
       propertyPath: text
-      value: "Hay un canvas en blanco, presiona 'x' y crear algo \xFAnico."
+      value: "Hay un canvas en blanco, presiona 'x' y crea algo \xFAnico."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
@@ -7924,9 +7924,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 1495784552}
     m_Modifications:
     - target: {fileID: 2736127579715171586, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
+      propertyPath: m_margin.x
+      value: -414.67334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736127579715171586, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
+      propertyPath: m_margin.z
+      value: -414.01288
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736127579715171586, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 4897627850023382064, guid: 24b83d5485290a6448578813c3a840b1, type: 2}
+    - target: {fileID: 2736127579715171587, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 725
+      objectReference: {fileID: 0}
+    - target: {fileID: 2736127579715171587, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2736127579750595586, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -8129,7 +8145,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136305863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.270807, y: -134.9, z: -12}
+  m_LocalPosition: {x: 26.267796, y: -134.9, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14066,9 +14082,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9e0f77e11f76f45409114806c44e9d9d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b9b831bc6de35374c8606e85059f3933, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.076
+  m_Volume: 0.15
   m_Pitch: 1
   Loop: 1
   Mute: 0

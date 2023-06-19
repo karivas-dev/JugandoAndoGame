@@ -2186,7 +2186,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9e0f77e11f76f45409114806c44e9d9d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b9b831bc6de35374c8606e85059f3933, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.076
   m_Pitch: 1
@@ -4047,7 +4047,7 @@ MonoBehaviour:
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.79
   m_SoftZoneHeight: 0.8
-  m_BiasX: 0
+  m_BiasX: 0.0000001334432
   m_BiasY: -0.0000001490116
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2

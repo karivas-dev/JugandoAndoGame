@@ -3588,7 +3588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6509907057452002358, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: text
-      value: "Parece ser que no podemos ir al bosque a\xFAn. \xBFAl museo? Quiz\xE1s"
+      value: "Parece ser que no podemos ir al bosque a\xFAn. Al museo, \xBFquiz\xE1s?"
       objectReference: {fileID: 0}
     - target: {fileID: 6509907057481655602, guid: d69502b574880e447b38b67e584884da, type: 3}
       propertyPath: m_margin.x

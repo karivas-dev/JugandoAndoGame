@@ -43,14 +43,7 @@ public class TextManager : MonoBehaviour
     {
         verifyEntry.Play("OutroWindow");
         firstCanvas.SetActive(false);
-        certificateCanvas.SetActive(true);
-        certificate.Play("CertiEntry");
-        string text1 = inputField1.text;
-        string text2 = inputField2.text;
-        certificate.Play("CertiLoop");
-
-        text1Display.text = "¡FELICIDADES " + text1 + "!";
-        text2Display.text = "TU COLECCIÓN '" + text2 + "' ESTÁ REGISTRADA";
+        StartCoroutine(LoadAfterTimeline1());
     }
 
     public void playAgain()
@@ -63,6 +56,25 @@ public class TextManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3.0f); 
         Loader.Load(Loader.Scene.MapWorld);
+    }
+
+    IEnumerator LoadAfterTimeline1()
+    {
+        yield return new WaitForSeconds(0.5f); 
+        certificateCanvas.SetActive(true);
+        certificate.Play("CertiEntry");
+        StartCoroutine(LoadAfterTimeline2());
+    }
+
+    IEnumerator LoadAfterTimeline2()
+    {
+        yield return new WaitForSeconds(1.0f); 
+        string text1 = inputField1.text;
+        string text2 = inputField2.text;
+        certificate.Play("CertiLoop");
+
+        text1Display.text = "¡FELICIDADES " + text1 + "!";
+        text2Display.text = "TU COLECCIÓN '" + text2 + "' ESTÁ REGISTRADA";
     }
 }
 
