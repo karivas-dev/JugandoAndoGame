@@ -41,8 +41,6 @@ public class CountDown : MonoBehaviour
         if(currentTime <= 0)
         {
             currentTime = 0;
-            
-            SceneManager.LoadScene("LoseScreen");
         }
 
         UpdateCountText();

@@ -16,7 +16,6 @@ public class EntryNemy : MonoBehaviour
     public KeyCode interactKey;
     public GameObject letterHint;
 
-
     public UnityEvent interactAction;
     public bool isInRange = false;
     public bool isTriggered = false;
@@ -32,9 +31,9 @@ public class EntryNemy : MonoBehaviour
 
     void Update()
     {
-        if(isInRange) 
+        if (isInRange)
         {
-            if(Input.GetKeyDown(interactKey) && isTriggered == false)
+            if (Input.GetKeyDown(interactKey) && isTriggered == false)
             {
                 player.GetComponent<Movement>().enabled = false;
                 letterHint.SetActive(false);
@@ -42,44 +41,31 @@ public class EntryNemy : MonoBehaviour
                 canvas.SetActive(true);
                 isTriggered = true;
             }
-            else if(Input.GetKeyDown(interactKey) && isTriggered) 
+            else if (Input.GetKeyDown(interactKey) && isTriggered)
             {
-                if (spriteRenderer.flipX)        
+                if (spriteRenderer.flipX)
                     spriteRenderer.flipX = !spriteRenderer.flipX;
-        
+
                 canvas.SetActive(false);
                 animator.SetFloat("HorizontalAxis", 0);
                 director.GetComponent<TimelineManager>().enabled = true;
                 nemyBGM.Play();
                 isTriggered = false;
+
+                enabled = false;
             }
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) 
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))      
-            isInRange = true;        
-  
+        if (collision.gameObject.CompareTag("Player"))
+            isInRange = true;
     }
 
-    private void OnTriggerExit2D(Collider2D collision) 
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player")) 
-            isInRange = false;            
+        if (collision.gameObject.CompareTag("Player"))
+            isInRange = false;
     }
-
-   /* private void OnTriggerEnter2D(Collider2D collision) 
-    {
-        if(collision.gameObject.CompareTag("Player"))  
-        {
-            player.GetComponent<Movement>().enabled = false;       
-            director.GetComponent<TimelineManager>().enabled = true;
-            elementToDeactivate.SetActive(false);
-            animator.SetFloat("HorizontalAxis", 0;
-            healthBar.SetActive(true);
-            screenBG.SetActive(true);
-            timer.SetActive(true);
-        }   
-    }*/
 }
