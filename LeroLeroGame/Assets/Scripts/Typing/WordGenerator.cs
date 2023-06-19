@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class WordGenerator : MonoBehaviour
 {
-    private static string[] FalseBrand = {"marcas", "derecho exclusivo", "cnr", "comercio", "autor", 
+    private static string[] FalseBrand = {"marcas", "exclusivo", "cnr", "comercio", "autor", 
                                             "creador", "obra", "libro", "ompi", "software", 
-                                            "empresas", "negocio", "signos distintivos", "logos", "nombre comercial", 
+                                            "empresas", "negocio", "signos", "distintivos", "logos", "nombre", "comercial", 
                                             "arte", "hardware", "registro", "derecho", 
-                                            "derecho de autor", "idea", "bien protegido", "eslogan", "distintivo corporativo",
+                                            "idea", "bien protegido", "eslogan", "distintivo", "corporativo",
                                              "original", "producto", "titular", "licencia", "caducidad", "servicios", 
                                              "inmaterial", "creador", "monopolio", 
                                              "robo", "seguridad", "nacional", "comunitario", 
-                                             "global", "internacional", "propiedad industrial", "propiedad intelectual", 
+                                             "global", "internacional", "industrial", "intelectual", 
                                             "patentes", "industria", "leyes",
                                              "inventos", "autenticidad", "modelos", "propiedad"};
 

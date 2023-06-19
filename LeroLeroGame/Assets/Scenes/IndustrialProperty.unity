@@ -1804,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2736127579750595590, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
       propertyPath: text
-      value: "Hay algo m\xE1s adelante, \xA1Vamos a investigar!"
+      value: "Hay que detener a Nemy, \xA1Est\xE1 mas adelante!"
       objectReference: {fileID: 0}
     - target: {fileID: 2736127581771853665, guid: 5c5ea51ad373a6546b690fd2472baba8, type: 3}
       propertyPath: m_text
