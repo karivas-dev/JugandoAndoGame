@@ -35,7 +35,7 @@ public class TimelineManager : MonoBehaviour
                 break;
             
             case "WinningNemy":
-                
+                Loader.Load(Loader.Scene.MapWorld2);
                 break;
         }
     }

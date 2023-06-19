@@ -47,13 +47,11 @@ public class ScoreManager : MonoBehaviour
             wordManager.GetComponent<WordManager>().enabled = false;
             typingCanvas.SetActive(false);
             Destroy(wordManager);
-            LoadSceneAfterTimeline();
         }
     }
 
-    IEnumerator LoadSceneAfterTimeline()
+    public void LoadSceneAfterTimeline()
     {
-        yield return new WaitForSeconds(4f); 
         Loader.Load(Loader.Scene.CNR);
     }
 
