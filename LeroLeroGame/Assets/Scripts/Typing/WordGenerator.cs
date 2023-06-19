@@ -8,7 +8,7 @@ public class WordGenerator : MonoBehaviour
                                             "creador", "obra", "libro", "ompi", "software", 
                                             "empresas", "negocio", "signos", "distintivos", "logos", "nombre", "comercial", 
                                             "arte", "hardware", "registro", "derecho", 
-                                            "idea", "bien protegido", "eslogan", "distintivo", "corporativo",
+                                            "idea", "protegido", "eslogan", "distintivo", "corporativo",
                                              "original", "producto", "titular", "licencia", "caducidad", "servicios", 
                                              "inmaterial", "creador", "monopolio", 
                                              "robo", "seguridad", "nacional", "comunitario", 
