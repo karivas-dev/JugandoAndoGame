@@ -15,7 +15,6 @@ public class TimelineManager : MonoBehaviour
     void Start() {
         director = GetComponent<PlayableDirector>();
         director.Play();
-
         StartCoroutine(EnableAfterTimeline());
     }
 

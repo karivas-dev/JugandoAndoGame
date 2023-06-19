@@ -5,8 +5,9 @@ public class TextManager : MonoBehaviour
 {
     public GameObject instructionCanvas;
     public GameObject firstCanvas;
-    public GameObject secondCanvas;
+    public GameObject certificateCanvas;
     public Animator verifyEntry;
+    public Animator certificate;
 
     public TMP_InputField inputField1;
     public TMP_InputField inputField2;
@@ -37,19 +38,22 @@ public class TextManager : MonoBehaviour
 
     public void pagarButton()
     {
-        
-    }
-
-    public void SwitchCanvas()
-    {
+        verifyEntry.Play("OutroWindow");
+        firstCanvas.SetActive(false);
+        certificateCanvas.SetActive(true);
+        certificate.Play("CertiEntry");
         string text1 = inputField1.text;
         string text2 = inputField2.text;
+        certificate.Play("CertiLoop");
 
-        text1Display.text = "!Muy bien " + text1 + "!";
-        text2Display.text = "Ya casi termina el registro de tu marca '" + text2 + "'";
+        text1Display.text = "¡FELICIDADES " + text1 + "!";
+        text2Display.text = "TU COLECCIÓN '" + text2 + "' ESTÁ REGISTRADA";
+    }
 
-        firstCanvas.SetActive(false);
-        secondCanvas.SetActive(true);
+    public void playAgain()
+    {
+        certificate.Play("CertiOutro");
+        Loader.Load(Loader.Scene.MapWorld);
     }
 }
 
