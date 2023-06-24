@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class WordGenerator : MonoBehaviour
 {
-    private static string[] FalseBrand = {"marcas", "derecho exclusivo", "invencion", "comercio", "autor", 
-                                            "creador", "obra", "libro", "musica", "tecnologia", 
-                                            "empresas", "negocio", "signos distintivos", "logos", "nombre comercial", 
-                                            "arte", "legislacion", "registro", "derecho", 
-                                            "derecho de autor", "creacion", "bien protegido", "eslogan", "distintivo corporativo",
+    private static string[] FalseBrand = {"marcas", "exclusivo", "cnr", "comercio", "autor", 
+                                            "creador", "obra", "libro", "ompi", "software", 
+                                            "empresas", "negocio", "signos", "distintivos", "logos", "nombre", "comercial", 
+                                            "arte", "hardware", "registro", "derecho", 
+                                            "idea", "protegido", "eslogan", "distintivo", "corporativo",
                                              "original", "producto", "titular", "licencia", "caducidad", "servicios", 
-                                             "inmaterial", "clasificacion", "monopolio", 
-                                             "vulneracion", "proteccion", "nacional", "comunitario", 
-                                             "global", "internacional", "propiedad industrial", "propiedad intelectual", 
+                                             "inmaterial", "creador", "monopolio", 
+                                             "robo", "seguridad", "nacional", "comunitario", 
+                                             "global", "internacional", "industrial", "intelectual", 
                                             "patentes", "industria", "leyes",
-                                             "inventos", "marcas", "modelos", "propiedad"};
+                                             "inventos", "autenticidad", "modelos", "propiedad"};
 
     public static string GetRandomWord()
     {
